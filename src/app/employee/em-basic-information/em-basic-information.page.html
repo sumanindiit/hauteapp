@@ -1,0 +1,160 @@
+<ion-header mode="ios">
+  <ion-toolbar lines="none">
+    <ion-back-button slot="start" defaultHref="/tabs-em/tabs-em/em-profile" text="" icon="arrow-back-outline">
+    </ion-back-button>
+
+    <ion-title class="ttl-left">
+      Basic Information
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-row mb40>
+    <form [formGroup]="updateProfileForm" (ngSubmit)="onSubmit()" novalidate>
+      <ion-col size="6">
+        <div form-group>
+          <ion-label>First Name*</ion-label>
+          <ion-item lines="none">
+            <ion-input formControlName="firstName" type="text" value=""></ion-input>
+          </ion-item>
+          <ion-item class="form-text error" *ngIf="submitAttempt && errorCtr.firstName.errors?.required">
+            <ion-label no-margin stacked>First Name is required.</ion-label>
+          </ion-item>
+          <ion-item class="form-text error" *ngIf="submitAttempt && errorCtr.firstName.errors?.minlength">
+            <ion-label no-margin stacked>Min 3 chars long.</ion-label>
+          </ion-item>
+          <ion-item class="form-text error" *ngIf="submitAttempt && errorCtr.firstName.errors?.pattern">
+            <ion-label no-margin stacked>Only alphabets allowed.</ion-label>
+          </ion-item>
+        </div>
+      </ion-col>
+      <ion-col size="6">
+        <div form-group>
+          <ion-label>Last Name*</ion-label>
+          <ion-item lines="none">
+            <ion-input formControlName="lastName" type="text" value=""></ion-input>
+          </ion-item>
+          <ion-item class="form-text error" *ngIf="submitAttempt && errorCtr.lastName.errors?.required">
+            <ion-label no-margin stacked>Last Name is required.</ion-label>
+          </ion-item>
+          <ion-item class="form-text error" *ngIf="submitAttempt && errorCtr.lastName.errors?.minlength">
+            <ion-label no-margin stacked>Min 3 chars long.</ion-label>
+          </ion-item>
+          <ion-item class="form-text error" *ngIf="submitAttempt && errorCtr.lastName.errors?.pattern">
+            <ion-label no-margin stacked>Only alphabets allowed.</ion-label>
+          </ion-item>
+        </div>
+      </ion-col>
+      <ion-col size="12">
+        <div form-group>
+          <ion-label>Professional Title</ion-label>
+          <ion-item lines="none">
+            <ion-input formControlName="pTitle" type="text" value=""></ion-input>
+          </ion-item>
+          <ion-item class="form-text error" *ngIf="submitAttempt && errorCtr.pTitle.errors?.required">
+            <ion-label no-margin stacked>Professional title is required.</ion-label>
+          </ion-item>
+        </div>
+      </ion-col>
+      <ion-col size="12">
+        <div form-group>
+          <ion-label>About Me*</ion-label>
+          <ion-item lines="none">
+            <ion-textarea formControlName="aboutMe" rows="8" placeholder="About Company..." value="">
+            </ion-textarea>
+          </ion-item>
+          <ion-item class="form-text error" *ngIf="submitAttempt && errorCtr.aboutMe.errors?.required">
+            <ion-label no-margin stacked>About me is required.</ion-label>
+          </ion-item>
+        </div>
+      </ion-col>
+      <ion-col size="12">
+        <div form-group>
+          <ion-label>Facility Type*</ion-label>
+          <ion-item lines="none">
+            <ion-select [interfaceOptions]="facility" formControlName="facility" placeholder="Select"
+              interface="action-sheet">
+              <ion-select-option *ngFor="let val of facilityData" value="{{val.term_id}}">{{val.name}}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item class="form-text error" *ngIf="submitAttempt && errorCtr.facility.errors?.required">
+            <ion-label no-margin stacked>Please select at least one.</ion-label>
+          </ion-item>
+        </div>
+      </ion-col>
+      <ion-col size="12">
+        <div form-group>
+          <ion-label>Location</ion-label>
+          <ion-item lines="none">
+            <ion-input formControlName="location" type="text" value=""></ion-input>
+            <img src="assets/images/address.svg">
+          </ion-item>
+          <ion-item class="form-text error" *ngIf="submitAttempt && errorCtr.location.errors?.required">
+            <ion-label no-margin stacked>Location is required.</ion-label>
+          </ion-item>
+        </div>
+      </ion-col>
+      <ion-col size="12">
+        <div form-group>
+          <ion-label>Email*</ion-label>
+          <ion-item lines="none">
+            <ion-input formControlName="email" type="email" value="" readonly></ion-input>
+          </ion-item>
+          <ion-item class="form-text error" *ngIf="submitAttempt && errorCtr.email.errors?.required">
+            <ion-label no-margin stacked>Email is required.</ion-label>
+          </ion-item>
+          <ion-item class="form-text error" *ngIf="submitAttempt && errorCtr.email.errors?.pattern">
+            <ion-label no-margin stacked>Enter valid email.</ion-label>
+          </ion-item>
+        </div>
+      </ion-col>
+      <ion-col size="12">
+        <div form-group>
+          <ion-label>Phone Number*</ion-label>
+          <ion-item lines="none">
+            <ion-input maxlength="12" formControlName="phoneNo" type="tel" value=""></ion-input>
+          </ion-item>
+          <ion-item class="form-text error" *ngIf="submitAttempt && errorCtr.phoneNo.errors?.required">
+            <ion-label no-margin stacked>Phone number is required.</ion-label>
+          </ion-item>
+          <ion-item class="form-text error" *ngIf="submitAttempt && errorCtr.phoneNo.errors?.pattern">
+            <ion-label no-margin stacked>Number values allowed.</ion-label>
+          </ion-item>
+          <ion-item class="form-text error" *ngIf="submitAttempt && errorCtr.phoneNo.errors?.maxlength">
+            <ion-label no-margin stacked>Max 12 number values allowed.</ion-label>
+          </ion-item>
+        </div>
+        <div class="orflex">
+          <h2>Other Details </h2>
+          <hr>
+        </div>
+      </ion-col>
+
+      <ng-container *ngFor="let fields of customFields">
+        <ion-col size="12">
+          <div form-group>
+            <ion-label>{{ fields.label }} *</ion-label>
+            <ion-item lines="none">
+              <ion-select formControlName="{{ fields.name}}" [interfaceOptions]="nextrole" placeholder="Select"
+                interface="action-sheet">
+                <ion-select-option *ngFor="let val of fields.data | keyvalue" value="{{val.key}}">{{val.value}}
+                </ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="form-text error" *ngIf="submitAttempt &&  checkDynamicErrors(fields.name)">
+              <ion-label no-margin stacked>Please select at least one.</ion-label>
+            </ion-item>
+          </div>
+        </ion-col>
+      </ng-container>
+
+      <ion-button post-job-btn shape="round" type="submit" expand="full" color="primary">Save</ion-button>
+    </form>
+  </ion-row>
+</ion-content>
+
+<ion-footer>
+
+</ion-footer>

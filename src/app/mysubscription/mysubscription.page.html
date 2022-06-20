@@ -1,0 +1,42 @@
+<ion-header mode="ios" [class.show-background]="showToolbar">
+  <ion-toolbar lines="none">
+    <ion-back-button slot="start" defaultHref="/" text="" icon="arrow-back-outline"></ion-back-button>
+ <ion-title>
+   My Current Subscription
+ </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" [scrollEvents]="true" (ionScroll)="onScroll($event)">
+ <div subscriptionSlider>
+         <div class="layers-main">
+           <div sbtn-crd-tp>
+               <div plan-Type>Bronze</div>
+               <div plan-price>
+                 <sub>$</sub>19.99<span>/ 1 Month</span>
+               </div>
+               <ul>
+                 <li># of active postings: <span>1 Post</span></li>
+               </ul>
+               <h2>Price (CAD+ tax)</h2>
+               <p>Valid till: 28 March 2022</p>
+           </div>
+           <div sbtn-crd-bdy>
+             <!-- <h3>Try Haute for free </h3> -->
+             <ul>
+               <li><ion-icon name="checkmark-circle"></ion-icon> Access via our industry leading app</li>
+               <li><ion-icon name="checkmark-circle"></ion-icon>First post free</li>
+               <li light_li><ion-icon name="checkmark-circle"></ion-icon> Access to Employee Database</li>
+               <li light_li><ion-icon name="checkmark-circle"></ion-icon> Priority Flag on Job Postings</li>
+               <li light_li><ion-icon name="checkmark-circle"></ion-icon> Marketing on One Instagram/Facebook Story</li>
+               <li light_li><ion-icon name="checkmark-circle"></ion-icon> Marketing in 2 Email Blasts, Logo on Website</li>
+               <li light_li><ion-icon name="checkmark-circle"></ion-icon> Recruitment Assistance (Resume Screening, Initial Interviews, Candidate Ranking)</li>
+             </ul>
+             <a href="javascript:void(0);" class="moreBtn">Learn More</a>
+          
+           </div>
+         </div>
+     
+ 
+ </div>
+</ion-content>

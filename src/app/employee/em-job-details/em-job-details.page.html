@@ -1,0 +1,231 @@
+<ion-header mode="ios" [class.show-background]="showToolbar">
+  <ion-toolbar lines="none">
+    <ion-back-button slot="start" defaultHref="/tabs-em/tabs-em/em-home" text="" icon="arrow-back-outline">
+    </ion-back-button>
+
+    <ion-title class="ttl-left">
+      Job Details
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-no-padding" [scrollEvents]="true" (ionScroll)="onScroll($event)">
+
+  <div job-detail-hdr>
+    <img src="{{ jobData?.post_thumbnail }}">
+    <h1>{{ jobData?.title }}</h1>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <img src="assets/images/calender.svg">
+          <h2>Posted on</h2>
+          <h3>{{ jobData?.posted_date }}</h3>
+        </ion-col>
+        <ion-col border-colmn>
+          <img src="assets/images/job-map.svg">
+          <h2>Location</h2>
+          <h3>{{ jobData?.job_location }}</h3>
+        </ion-col>
+        <ion-col>
+          <img src="assets/images/salary.svg">
+          <h2>Salary</h2>
+          <h3>{{ jobData?.salary }}</h3>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-button (click)="shortlistThisJob();" *ngIf="!isShortlisted"><img src="assets/images/sort.svg">{{ Shortlistedtxt }}</ion-button>
+          <ion-button *ngIf="isShortlisted"><img src="assets/images/sort.svg">Shortlisted</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button (click)="shareWithEmail(jobData?.title,jobData?.url);"><img src="assets/images/emailjob.svg">Email
+            Job</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button (click)="viewOnMap(jobData?.view_map_location)"><img src="assets/images/viewmap.svg">View on Map
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+  </div>
+
+  <div job-detail-data>
+    <h1>Job Detail</h1>
+
+    <ion-row>
+      <ng-container *ngIf="jobData?.perks.length > 0">
+        <ion-col size="6" class="ion-no-padding">
+          <div job-detail-box>
+            <img src="assets/images/detail1.svg">
+            <h2>Perks</h2>
+            <ng-container *ngFor="let perk of jobData?.perks">
+              <p>{{ perk}}</p>
+            </ng-container>
+          </div>
+        </ion-col>
+      </ng-container>
+      <ng-container *ngIf="jobData?.past_experience !=''">
+        <ion-col size="6" class="ion-no-padding">
+          <div job-detail-box mrgin-set>
+            <img src="assets/images/detail2.svg">
+            <h2>Minimum Experience</h2>
+            <p>{{ jobData?.past_experience }}</p>
+          </div>
+        </ion-col>
+      </ng-container>
+
+    </ion-row>
+
+    <ion-row>
+      <ng-container *ngIf="jobData?.working_student !=''">
+        <ion-col size="6" class="ion-no-padding">
+          <div job-detail-box>
+            <img src="assets/images/detail3.svg">
+            <h2>Working Student Position </h2>
+            <p>{{ jobData?.working_student }}</p>
+          </div>
+        </ion-col>
+      </ng-container>
+
+      <ng-container *ngIf="jobData?.travel_requirement !=''">
+        <ion-col size="6" class="ion-no-padding">
+          <div job-detail-box mrgin-set>
+            <img src="assets/images/detail4.svg">
+            <h2>Travel Requirements</h2>
+            <p>{{ jobData?.travel_requirement }}</p>
+          </div>
+        </ion-col>
+      </ng-container>
+
+
+    </ion-row>
+
+
+    <h1>Job Description</h1>
+    <div [innerHTML]="jobData?.description"></div>
+
+    <ng-container *ngIf="jobData?.facility.length > 0">
+      <h1>Facility Type</h1>
+      <ion-label>
+        <ion-badge *ngFor="let facility of jobData?.facility">{{ facility.term_name }}</ion-badge>
+      </ion-label>
+    </ng-container>
+
+
+
+    <h1>Share</h1>
+
+    <ion-item lines="none" class="ion-no-padding">
+      <a (click)="shareWithFacebook(jobData?.title,jobData?.post_thumbnail,jobData?.url);"><img
+          src="assets/images/fb.svg"></a>
+      <a (click)="shareWithInstagram(jobData?.title,jobData?.post_thumbnail);"><img src="assets/images/insta.svg"></a>
+      <a (click)="shareWithWhatsapp(jobData?.title,jobData?.post_thumbnail,jobData?.url);"><img
+          src="assets/images/whatsapp.svg"></a>
+      <a (click)="copyLink(jobData?.url);"><img src="assets/images/share.svg"></a>
+    </ion-item>
+
+
+
+    <div em-job-detail *ngIf="relatedJobs.length > 0">
+      <h4 class="sec-ttl">Other jobs you may like <a href="/tabs-em/tabs-em/em-home" class="rit-all"> See All</a></h4>
+      <div myjobs-pge>
+
+
+        <ion-card routerLink="/em-job-details/{{jobs.id}}" *ngFor="let jobs of relatedJobs">
+          <ion-item lines="none" class="ion-no-padding">
+
+            <img class="job-img whitehorse" src="{{ jobs.post_thumbnail }}">
+
+            <ion-label>
+              <h1>{{ jobs?.title }}</h1>
+              <p *ngIf="jobs?.posted_by != ''">{{ jobs?.posted_by }}</p>
+              <div active-status>
+                <h2>{{ jobs.salary }}</h2>
+                <span statusactive>Active</span>
+              </div>
+            </ion-label>
+          </ion-item>
+
+          <div card-content>
+            <ion-row>
+              <ion-col size="7" class="ion-no-padding">
+                <ion-item lines="none">
+                  <img src="assets/images/location.svg">
+                  <ion-label>
+                    <h4>Location:</h4>
+                    <h2>{{ jobData?.job_location }}</h2>
+                  </ion-label>
+                </ion-item>
+              </ion-col>
+              <ion-col size="5" class="ion-no-padding" *ngIf="jobs.deadline != ''">
+                <ion-item lines="none">
+                  <img src="assets/images/deadline.svg">
+                  <ion-label>
+                    <h4>Deadline:</h4>
+                    <h2>{{ jobs.deadline }}</h2>
+                  </ion-label>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col size="7" class="ion-no-padding">
+                <ion-item lines="none">
+                  <img src="assets/images/deadline.svg">
+                  <ion-label>
+                    <h4>Posted on:</h4>
+                    <h2>{{ jobs.posted_date }}</h2>
+                  </ion-label>
+                </ion-item>
+              </ion-col>
+              <ion-col size="5" class="ion-no-padding" *ngIf="jobs.applied_count != 0">
+                <ion-item lines="none">
+                  <img src="assets/images/application.svg">
+                  <ion-label>
+                    <h4>Applications:</h4>
+                    <h2>{{ jobs?.applied_count }}</h2>
+                  </ion-label>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col size="12" class="ion-no-padding">
+                <ion-item lines="none">
+                  <img src="assets/images/facility.svg">
+                  <ion-label>
+                    <h4>Facility Type:</h4>
+                    <h2 *ngFor="let facility of jobs?.facility">{{ facility.term_name }}</h2>
+                  </ion-label>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+          </div>
+
+        </ion-card>
+
+
+
+      </div>
+    </div>
+  </div>
+
+</ion-content>
+<ng-container *ngIf="!jobData">
+  <ion-footer>
+    <ion-toolbar lines="none">
+      <ion-button  post-job-btn shape="round" expand="full" color="primary" ><ion-skeleton-text animated style="width: 60%"></ion-skeleton-text></ion-button>
+    </ion-toolbar>
+  </ion-footer>
+</ng-container>
+<ng-container *ngIf="jobData">
+  <ion-footer>
+    <ion-toolbar lines="none">
+      <ion-button (click)="applyForJob();" post-job-btn shape="round" expand="full" color="primary" *ngIf="!isApplied">
+        {{ appliedTxt }}</ion-button>
+      <ion-button post-job-btn shape="round" expand="full" color="primary" *ngIf="isApplied">Applied</ion-button>
+    </ion-toolbar>
+  </ion-footer>
+</ng-container>

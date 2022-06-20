@@ -1,0 +1,57 @@
+<ion-content>
+	<div loginbg-img>
+		<img src="assets/images/logo.png">
+	</div>
+	<div form-field>
+		<div form-field-top>
+			<div form-head>
+				<h2>Welcome Back!</h2>
+				<p>Login To Your Account</p>
+			</div>
+			<form [formGroup]="logInForm" (ngSubmit)="onSubmit()" novalidate>
+				<div form-group>
+					<ion-item lines="none">
+						<ion-label><img src="assets/images/email.svg" /></ion-label>
+						<ion-input formControlName="email" type="email" placeholder="Email Address"></ion-input>
+					</ion-item>
+					<ion-item class="form-text error" *ngIf="submitAttempt && errorCtr.email.errors?.required">
+						<ion-label no-margin stacked>Email is required.</ion-label>
+					</ion-item>
+					<ion-item class="form-text error" *ngIf="submitAttempt && errorCtr.email.errors?.pattern">
+						<ion-label no-margin stacked>Enter valid email.</ion-label>
+					</ion-item>
+				</div>
+				<div form-group>
+					<ion-item lines="none">
+						<ion-label><img src="assets/images/lock.svg" /></ion-label>
+						<ion-input [type]="passwordType" formControlName="password" placeholder="Password"></ion-input>
+						<span class="icon-pss">
+							<ion-icon [name]="passwordIcon" (click)='hideShowPassword()'></ion-icon>
+						</span>
+					</ion-item>
+					<ion-item class='form-text error' *ngIf="submitAttempt && errorCtr.password.errors?.required">
+						<ion-label no-margin stacked>Password is required.</ion-label>
+					</ion-item>
+					<ion-item class='form-text error' *ngIf="submitAttempt && errorCtr.password.errors?.pattern">
+						<ion-label no-margin stacked wrap-text>Password must be between 6 and 12 characters with at
+							least one capital letter, one small letter, and one digit.</ion-label>
+					</ion-item>
+				</div>
+				<div form-group>
+					<div forgot>
+						<a routerLink="/forgot-password" href="javascript:void(0)">Forgot Password ?</a>
+					</div>
+				</div>
+				<div login-btn>
+					<ion-button type="submit" expand="full" color="primary" shape="round" >
+						Login
+					</ion-button>
+				</div>
+			</form>
+		</div>
+
+		<div btn-signup class="ion-text-center">
+			<p>Don’t have an account ? <a href="javascript:void(0)" routerLink="/signup">Sign Up Here</a></p>
+		</div>
+	</div>
+</ion-content>

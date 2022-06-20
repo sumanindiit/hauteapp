@@ -1,0 +1,89 @@
+<ion-header mode="ios">
+  <ion-toolbar lines="none">
+      <ion-title class="ttl-left">
+        Applied Jobs
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div myjobs-pge>
+
+    <ion-card routerLink="/em-job-details/{{jobs.id}}" *ngFor="let jobs of alljobs">
+      <ion-item lines="none" class="ion-no-padding">
+
+        <img class="job-img whitehorse" src="{{ jobs.post_thumbnail }}">
+
+        <ion-label>
+          <h1>{{ jobs?.title }}</h1>
+          <p *ngIf="jobs?.posted_by != ''">{{ jobs?.posted_by }}</p>
+          <div active-status>
+            <h1 style="font-size: 12px;">{{ jobs.salary }}</h1>
+            <span statusactive>Active</span>
+          </div>
+        </ion-label>
+      </ion-item>
+
+      <div card-content>
+        <ion-row>
+          <ion-col size="7" class="ion-no-padding">
+            <ion-item lines="none">
+              <img src="assets/images/location.svg">
+              <ion-label>
+                <h4>Location:</h4>
+                <h2>{{ jobData?.job_location }}</h2>
+              </ion-label>
+            </ion-item>
+          </ion-col>
+          <ion-col size="5" class="ion-no-padding" *ngIf="jobs.deadline != ''">
+            <ion-item lines="none">
+              <img src="assets/images/deadline.svg">
+              <ion-label>
+                <h4>Deadline:</h4>
+                <h2>{{ jobs.deadline }}</h2>
+              </ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="7" class="ion-no-padding">
+            <ion-item lines="none">
+              <img src="assets/images/deadline.svg">
+              <ion-label>
+                <h4>Posted on:</h4>
+                <h2>{{ jobs.posted_date }}</h2>
+              </ion-label>
+            </ion-item>
+          </ion-col>
+          <ion-col size="5" class="ion-no-padding" *ngIf="jobs.applied_count != 0">
+            <ion-item lines="none">
+              <img src="assets/images/application.svg">
+              <ion-label>
+                <h4>Applications:</h4>
+                <h2>{{ jobs?.applied_count }}</h2>
+              </ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="12" class="ion-no-padding">
+            <ion-item lines="none">
+              <img src="assets/images/facility.svg">
+              <ion-label>
+                <h4>Facility Type:</h4>
+                <h2 *ngFor="let facility of jobs?.facility">{{ facility.term_name }}</h2>
+              </ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+      </div>
+
+    </ion-card>
+  </div>
+
+</ion-content>
+

@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar lines="none">
+    <ion-title class="ttl-left">
+      Message
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div search-message  *ngIf="convertations.length > 0">
+    <ion-searchbar placeholder="Search..." class="input-searchbar"></ion-searchbar>
+  </div>
+  <div messages-div>
+
+    <ng-container *ngIf="convertations.length > 0">
+      <ion-item lines="none" *ngFor="let thread of convertations">
+        <div new-item routerLink="/chat/{{thread.threadId}}">
+          <ion-thumbnail>
+            <img src="{{ thread.image }}" />
+          </ion-thumbnail>
+          <ion-label>
+            <h2>{{ thread.name }} <span>{{ thread.time }}</span></h2>
+            <p>{{ thread.message }} <span>
+                <!--ion-badge>2</ion-badge--->
+              </span></p>
+          </ion-label>
+        </div>
+      </ion-item>
+    </ng-container>
+    <ng-container  *ngIf="is_loaded === true">
+        <ion-item detail="false" lines="none">
+          <ion-label noti-cont>
+            <h1 style="font-size: 16px;color: red;text-align: center;">You have no messages.</h1>
+          </ion-label>
+        </ion-item>
+      </ng-container>
+
+
+
+  </div>
+</ion-content>

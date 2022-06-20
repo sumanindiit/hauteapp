@@ -1,0 +1,128 @@
+<ion-header mode="ios">
+  <ion-toolbar lines="none">
+   <ion-back-button slot="start" defaultHref="/payment" text="" icon="arrow-back-outline"></ion-back-button>
+ <ion-title class="ttl-left">
+   Add Card
+ </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ <div addcard>
+  <ion-item-sliding cardslide1 lines="none">
+    <ion-item class="ion-no-padding" lines="none">
+      <div visa-deflt-card>
+        <ion-item lines="none">
+          <span slot="start"><img src="assets/images/visa-white.svg"></span>
+          <span deflt-btn>Default</span>
+        </ion-item>
+        <ion-item lines="none">
+          <div card-numbr>
+          <ul>
+            <li>*</li>
+            <li>*</li>
+            <li>*</li>
+            <li>*</li>
+          </ul>
+          <ul>
+            <li>*</li>
+            <li>*</li>
+            <li>*</li>
+            <li>*</li>
+          </ul>
+          <ul>
+            <li>*</li>
+            <li>*</li>
+            <li>*</li>
+            <li>*</li>
+          </ul>
+          <ul>
+            <li>5</li>
+            <li>4</li>
+            <li>8</li>
+            <li>3</li>
+          </ul>
+        </div>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label>
+            <h2>Card Holder</h2>
+            <h1>Aycan Doganlar</h1>
+          </ion-label>
+          <ion-label slot="end">
+            <h2>Expires</h2>
+            <h1>12/23</h1>
+          </ion-label>
+        </ion-item>
+       </div>
+    </ion-item>
+
+    <ion-item-options side="end" lines="none">
+      <div edit-delte-btn>
+      <ion-item-option (click)="favorite(item)"><img src="assets/images/edit.svg"></ion-item-option>
+      <ion-item-option (click)="share(item)"><img src="assets/images/delete.svg"></ion-item-option>
+    </div>
+    </ion-item-options>
+  </ion-item-sliding>
+
+  <ion-item-sliding cardslide2 lines="none">
+    <ion-item class="ion-no-padding" lines="none">
+      <div visa-deflt-card>
+        <ion-item lines="none">
+          <span slot="start"><img src="assets/images/visa-blue.svg"></span>
+        </ion-item>
+        <ion-item lines="none">
+          <div card-numbr>
+          <ul>
+            <li>*</li>
+            <li>*</li>
+            <li>*</li>
+            <li>*</li>
+          </ul>
+          <ul>
+            <li>*</li>
+            <li>*</li>
+            <li>*</li>
+            <li>*</li>
+          </ul>
+          <ul>
+            <li>*</li>
+            <li>*</li>
+            <li>*</li>
+            <li>*</li>
+          </ul>
+          <ul>
+            <li>5</li>
+            <li>4</li>
+            <li>8</li>
+            <li>3</li>
+          </ul>
+        </div>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label>
+            <h2>Card Holder</h2>
+            <h1>Aycan Doganlar</h1>
+          </ion-label>
+          <ion-label slot="end">
+            <h2>Expires</h2>
+            <h1>12/23</h1>
+          </ion-label>
+        </ion-item>
+       </div>
+    </ion-item>
+
+    <ion-item-options side="end" lines="none">
+      <div edit-delte-btn>
+      <ion-item-option (click)="favorite(item)"><img src="assets/images/edit.svg"></ion-item-option>
+      <ion-item-option (click)="share(item)"><img src="assets/images/delete.svg"></ion-item-option>
+    </div>
+    </ion-item-options>
+  </ion-item-sliding>
+
+
+ </div>
+</ion-content>
+<ion-footer>
+ <ion-button save-btn shape="round" expand="full" color="primary"  routerLink="/add-payment-card">Add New Card</ion-button>	
+</ion-footer>

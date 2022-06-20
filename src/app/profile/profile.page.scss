@@ -1,0 +1,97 @@
+ion-header {
+	position: relative;
+    width: 100%;
+	padding: 0 15px;
+    background: #fafcff;
+	&:after {
+		display: none;
+	}
+	ion-toolbar {
+		--border-width: 0px;
+	    --min-height: 65px;
+	    --background: transparent;
+	    ion-title{
+	    	    font-size: 18px;
+			    font-family: var(--ion-poppins-font);
+			    font-weight: 600;
+			    color: var(--ion-color-dark);
+	    }
+	}
+}
+
+ion-content {
+    --background: #FAFCFF;
+	background: #FAFCFF;
+	[my-profile] {
+		background: transparent;
+	    padding: 10px 20px;
+	    position: relative;
+	    z-index: 1;
+	    margin-top: 0;
+    [profile-img-div]{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        .profile-pic{
+            position: relative;
+            min-width: 167px;
+             min-height: 167px;
+            img{
+            width: 167px;
+             height: 167px;
+             border: 3px solid #16233c;
+            border-radius: 100%;
+            }
+            .edit-image{
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                width: 42px;
+                height:42px;
+                border: none;
+            }
+
+        }   
+        h1{
+            font-size: 16px;
+            color: #000;
+            font-weight: 600;
+            margin-top: 15px;
+            margin-bottom: 8px;
+
+        } 
+        h2{
+            color: #43444F;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+    }
+		ion-list {
+			background: transparent !important;
+			contain: initial;
+			ion-item {
+				padding: 15px;
+				--inner-padding-end: 0;
+				--padding-start:0px;
+			    border-radius: 12px;
+			    margin-bottom: 15px;
+			    --detail-icon-color: var(--ion-color-primary);
+			    --detail-icon-opacity: 1;
+			    --background-hover: #fff;
+			    background: #fff;
+			    box-shadow: 0px 4px 14px rgba(22, 35, 60, 0.06);
+                ion-title{
+                    font-size: 16px;
+                    font-family: var(--ion-poppins-font);
+                    font-weight: 600;
+                    padding:0;
+                    color: var(--ion-color-dark);
+            }
+				ion-label {
+					margin: 0;
+				}
+			}
+		}
+		}
+}

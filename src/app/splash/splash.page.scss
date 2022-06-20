@@ -1,0 +1,20 @@
+ion-content {
+   --background: url(../../assets/images/splash.png) no-repeat center center / cover ;
+
+[splash] 
+ {
+     min-height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-align: center;
+    width: 100%;	
+	[logo] {
+	    margin: 50px 0;
+		width: 100%;
+		position: relative;
+		z-index: 1;
+	  }
+	 
+	}
+   }

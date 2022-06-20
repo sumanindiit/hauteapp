@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar lines="none">
+    <ion-title class="ttl-left">
+      My Profile
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div my-profile>
+    <ion-label profile-img-div>
+      <ion-thumbnail class="profile-pic">
+        <img src="{{ userImage }}">
+        <img (click)="selectImageSource()" class="edit-image" src="assets/images/edit-img.svg">
+      </ion-thumbnail>
+      <form>
+        <input type="file" accept="image/*" id="fileupload" (change)="uploadFile($event)" name="fileupload"
+          style="display:none" />
+      </form>
+
+      <h1>{{ userData?.first_name }} {{ userData?.last_name }}</h1>
+      <h2>{{ userData?.professionaltitle }}</h2>
+    </ion-label>
+    <ion-list choose-mtd-lst>
+      <ion-item detail="false" lines="none" routerLink="/em-basic-information">
+        <ion-title class="ion-text-left">Basic Information</ion-title>
+        <ion-label slot="end"><img src="assets/images/profile-arrow.svg"></ion-label>
+      </ion-item>
+      <ion-item detail="false" lines="none" routerLink="/account">
+        <ion-title class="ion-text-left">Account</ion-title>
+        <ion-label slot="end"><img src="assets/images/profile-arrow.svg"></ion-label>
+      </ion-item>
+      <ion-item detail="false" lines="none" routerLink="/em-resume">
+        <ion-title class="ion-text-left">Resume</ion-title>
+        <ion-label slot="end"><img src="assets/images/profile-arrow.svg"></ion-label>
+      </ion-item>
+      <ion-item detail="false" lines="none" routerLink="/em-my-subscription">
+        <ion-title class="ion-text-left">My Subscription</ion-title>
+        <ion-label slot="end"><img src="assets/images/profile-arrow.svg"></ion-label>
+      </ion-item>
+      <ion-item detail="false" lines="none" routerLink="/em-packages">
+        <ion-title class="ion-text-left">Packages</ion-title>
+        <ion-label slot="end"><img src="assets/images/profile-arrow.svg"></ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

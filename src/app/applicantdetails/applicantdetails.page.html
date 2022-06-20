@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar lines="none">
+    <ion-back-button slot="start" defaultHref="/" text="" icon="arrow-back-outline"></ion-back-button>
+ <ion-title class="ttl-left">
+   Applicant Details
+ </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div my-profile>
+    <ion-label profile-img-div>
+      <ion-thumbnail class="profile-pic">
+        <img src="assets/images/applicant-detail.png">   
+      </ion-thumbnail>
+      <h1>Sarah Willson </h1>
+      <h2>Ui/ Ux Designer</h2>
+      <ion-button expand="block" routerlink="/tabs/messages" color="primary"><ion-icon name="mail-open-outline"></ion-icon> Message</ion-button>
+    </ion-label>
+    <ion-grid class="ion-text-center">
+      <ion-row>
+        <ion-col>
+          <h2>Applied Jobs</h2>
+          <h1>320</h1>
+        </ion-col>
+        <ion-col border-colmn>
+          <h2>Experience</h2>
+          <h1>5 Years</h1>
+        </ion-col>
+        <ion-col>
+          <h2>Location</h2>
+          <h1>San Diego</h1>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    
+   </div>
+</ion-content>
+<ion-footer>
+  <ion-list choose-mtd-lst list-one>
+    <ion-item detail="false" lines="none" routerLink="/basicinformation">
+     <div div-one>
+       <h1>Basic Information</h1>
+       <p>Please  click the link to view basic info</p>
+     </div>
+     <ion-label slot="end"><img src="assets/images/blue-arrow.svg"></ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-list choose-mtd-lst list-two>
+    <ion-item detail="false" style="--background: transparent;" lines="none" routerLink="#">
+      <div div-two>
+        <h1>Resume</h1>
+        <p>Please  click the link to view resume</p>
+      </div>
+     <ion-label slot="end"><img src="assets/images/white-arrow.svg"></ion-label>
+    </ion-item>
+  </ion-list>
+</ion-footer>

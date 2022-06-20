@@ -1,0 +1,161 @@
+<ion-header mode="ios">
+  <ion-toolbar lines="none">
+    <ion-back-button slot="start" defaultHref="/" text="" icon="arrow-back-outline"></ion-back-button>
+	
+      <ion-title class="ttl-left">
+           Edit Job
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <div form-group>
+    <ion-label>Job Title*</ion-label>
+    <ion-item lines="none">
+      <ion-input type="text" placeholder="Enter Job Title" value="UI/UX Designer"></ion-input>
+    </ion-item>
+  </div>	
+<div form-group>
+  <ion-label>Job Description*</ion-label>
+  <ion-item lines="none">
+    <ion-textarea rows="8" placeholder="About Company..." value="This role is not only critical but an excellent opportunity for someone who is driven and motivated by uncovering great opportunities in new product development Apply with the link to get a faster response: (Copy paste it in your browser) https://forms.gle/BkCDVFsFcxdAAsrz7"></ion-textarea>
+  </ion-item>
+</div>
+<div form-group>
+  <ion-label>Application Deadline</ion-label>
+  <ion-item lines="none">
+    <ion-input type="date" value="31/05/2022"></ion-input>
+  </ion-item>
+</div>
+<div form-group>
+  <ion-label>Closed Listing</ion-label>
+  <ion-item lines="none">
+    <ion-select  [(ngModel)]="choose.form" [interfaceOptions]="customAlertOptions11" placeholder="Select"  interface="alert">
+      <ion-select-option value="Yes"> Yes </ion-select-option>
+      <ion-select-option value="No"> No </ion-select-option>
+    </ion-select>
+  </ion-item>
+</div>
+<div form-group>
+      <ion-label>Facility Type *</ion-label>
+        <ion-item lines="none">
+          <ion-select  [(ngModel)]="category.form" [interfaceOptions]="customAlertOptions3" placeholder="Select"  interface="alert">
+            <ion-select-option value="cat1"> Hunter/Jumper </ion-select-option>
+            <ion-select-option value="cat2"> Barrel Racing</ion-select-option>
+            <ion-select-option value="cat2"> Breeding Program</ion-select-option>
+            <ion-select-option value="cat2"> Dressage</ion-select-option>
+            <ion-select-option value="cat2"> Endurance</ion-select-option>
+            <ion-select-option value="cat2"> Eventing</ion-select-option>
+
+          </ion-select>
+      </ion-item>
+      </div>
+      <div form-group>
+      <ion-label>Job Type*</ion-label>
+          <ion-item lines="none">
+            <ion-select  [(ngModel)]="category.form" [interfaceOptions]="customAlertOptions4" placeholder="Select" interface="alert">
+              <ion-select-option value="area1"> Full Time  </ion-select-option>
+              <ion-select-option value="area2"> Part Time </ion-select-option>
+              <ion-select-option value="area2"> Contract </ion-select-option>
+              <ion-select-option value="area2"> Seasonal </ion-select-option>
+            </ion-select>
+        </ion-item>
+</div> 
+<div form-group>
+  <ion-label>Salary*</ion-label>
+        <ion-item lines="none">
+          <ion-select  [(ngModel)]="minsalary.form" [interfaceOptions]="customAlertOptions5" placeholder="Select"  interface="alert">
+            <ion-select-option value="minsalary1"> Monthly </ion-select-option>
+            <ion-select-option value="minsalary2"> Hourly </ion-select-option>
+            <ion-select-option value="minsalary2"> Weekly </ion-select-option>
+            <ion-select-option value="minsalary2"> To Be Determined </ion-select-option>
+          </ion-select>
+      </ion-item>
+      </div>
+<div form-group>
+ 
+  <ion-row>
+    <ion-col size="6">
+      <ion-label>Minimum</ion-label>
+        <ion-item lines="none">
+          <ion-input type="text"  value="$15,00"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="6">
+      <ion-label>Maximum</ion-label>
+          <ion-item lines="none">
+            <ion-input type="text"  value="$5,000"></ion-input>
+        </ion-item>
+    </ion-col>
+  </ion-row>
+</div>
+
+<div class="orflex">
+  <h2>Order Details </h2>
+  <hr>
+</div>
+<div form-group>
+  <ion-label>Perks*</ion-label>
+          <ion-item lines="none">
+            <ion-select  [(ngModel)]="jobtype.form" [interfaceOptions]="customAlertOptions9" placeholder="Select" interface="alert">
+              <ion-select-option value="jobtype1"> Housing Included </ion-select-option>
+            <ion-select-option value="jobtype2"> Vehicle Included</ion-select-option>
+            <ion-select-option value="jobtype2"> Training Available </ion-select-option>
+            <ion-select-option value="jobtype2"> Benefits </ion-select-option>
+            <ion-select-option value="jobtype2"> To Be Negotiated </ion-select-option>
+            </ion-select>
+        </ion-item>
+</div>
+<div form-group>
+  <ion-label>Travel Requirements</ion-label>
+          <ion-item lines="none">
+            <ion-select  [(ngModel)]="candidates.form" [interfaceOptions]="customAlertOptions10" placeholder="Select" interface="alert">
+              <ion-select-option value="candidates1"> International Travel </ion-select-option>
+            <ion-select-option value="candidates2"> No Travel </ion-select-option>
+            <ion-select-option value="candidates2"> Travel within show circuit area </ion-select-option>
+            <ion-select-option value="candidates2"> Domestic Travel </ion-select-option>
+            <ion-select-option value="candidates2"> North American Travel </ion-select-option>
+            <ion-select-option value="candidates2"> Other </ion-select-option>
+
+            </ion-select>
+        </ion-item>
+</div>
+
+<div form-group>
+  <ion-label>Minimum Experience</ion-label>
+          <ion-item lines="none">
+            <ion-select  [(ngModel)]="candidates.form" [interfaceOptions]="customAlertOptions10" placeholder="Select" interface="alert">
+              <ion-select-option value="candidates1"> 1 - 2 Years</ion-select-option>
+            <ion-select-option value="candidates2"> 2 - 3 Years </ion-select-option>
+            <ion-select-option value="candidates2"> 3 - 5 Years </ion-select-option>
+            <ion-select-option value="candidates2"> 5 - 7 Years </ion-select-option>
+            <ion-select-option value="candidates2"> 8 - 10 Years </ion-select-option>
+
+            </ion-select>
+        </ion-item>
+</div>
+
+<div form-group>
+  <ion-label>Working Student Position</ion-label>
+          <ion-item lines="none">
+            <ion-select  [(ngModel)]="candidates.form" [interfaceOptions]="customAlertOptions10" placeholder="Select" interface="alert">
+              <ion-select-option value="candidates1"> Yes </ion-select-option>
+            <ion-select-option value="candidates2"> No </ion-select-option>
+            </ion-select>
+        </ion-item>
+</div>
+
+<div form-group>
+  <ion-label>Full Address</ion-label>
+  <ion-item lines="none">
+    <ion-input type="text"  value="Wellington, FL, USA"></ion-input>
+    <img src="assets/images/address.svg">
+</ion-item>
+</div>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar lines="none">
+  <ion-button post-job-btn shape="round" expand="full" color="primary">Update Job</ion-button>	
+</ion-toolbar>
+</ion-footer>

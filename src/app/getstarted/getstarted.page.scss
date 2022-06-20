@@ -1,0 +1,99 @@
+ion-content {
+   --background: url(../../assets/images/splash.png) no-repeat center center / cover ;
+   --padding-bottom: 0;
+   --padding-end: 0;
+   --padding-start: 0;
+   --padding-top: 0;
+
+[getstarted] 
+ {
+      min-height: calc(100% - 281px);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+		[logo] {
+		    margin: 50px 0;
+			width: 100%;
+			position: relative;
+			z-index: 1;
+			text-align: center;
+		  }
+		}
+	[getstartedbottom] 
+		{
+			    background: #FBFBFB;
+			    padding: 20px;
+			    border-top-left-radius: 50px;
+			    border-top-right-radius: 50px;
+			    	h3 {
+			    		    font-size: 18px;
+						    font-family: var(--ion-poppins-font);
+						    text-align: center;
+						    font-weight: 600;
+						    margin-bottom: 25px;
+						    margin-top: 10px;
+			    	}
+
+			     ion-button
+					  {     --box-shadow: none;
+						    min-height: 55px;
+						    color: var(--ion-color-white);
+						    --border-radius: 5px;
+						    font-size: 16px;
+						    font-weight: 500;
+						    text-transform: capitalize;
+						    margin: 25px 0px 0px;
+						    font-family: var(--ion-poppins-font);
+						    letter-spacing: 0;
+							ion-icon
+							{
+								margin-left:10px;
+							}
+					  }
+					  [radiolist]
+						   {
+						        margin: 0;
+							    display: flex;
+							    align-items: center;
+							    justify-content: space-between;
+								[radioinner]
+								{
+								  text-align:center;
+								  width: 48%;
+								 label
+								  {     
+								position: relative;
+							    display: block;
+							    background: #fff;
+							    padding: 15px 10px;
+							    border-radius: 15px;
+							    border: 2px solid #E8E8E8;
+							    [jobprofile] {
+									    display: inline-block;
+									    background: rgb(22 35 60 / 10%);
+									    padding: 12px;
+									    border-radius: 50%;
+									    width: 45px;
+									    height: 45px;
+									}
+								   h3
+								   {
+						               margin-top: 10px;
+									    color: var(--ion-color-primary);
+									    font-size: 13px;
+									    font-weight: 600;
+									    font-family: var(--ion-poppins-font);
+									    margin-bottom: 0;
+								   }
+								}
+								input[type="radio"]:checked + label
+								{
+								  
+								      border: 2px solid #16233C;
+								   
+								 }
+								  }
+							}
+			}
+   }

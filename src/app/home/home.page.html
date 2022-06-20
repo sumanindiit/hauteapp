@@ -1,0 +1,609 @@
+<ion-header  [class.show-background]="showToolbar">
+  <ion-toolbar>
+    <ion-buttons slot="start"><img src="assets/images/avtar.png"/> <span>Hey </span> Patrick!</ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [scrollEvents]="true" (ionScroll)="onScroll($event)">
+	<ion-card bgimg>
+		<img src="assets/images/home-bg.png"/>
+	</ion-card>
+	<div class="search-top">
+		<div class="serch-bx">
+			 <ion-icon name="search-outline"></ion-icon>
+			 <ion-input placeholder="Search..." routerLink="/searchjobs"></ion-input>
+		     <a  id="filter-modal"> <ion-icon name="options-outline"></ion-icon> </a>
+		</div>
+		
+	</div>
+	<div my-jobs>
+		<h4 class="sec-ttl"> My Jobs   <a routerLink="/tabs/tabs/my-jobs" class="rit-all"> See All</a></h4>
+		 <ion-slides pager="false" [options]="slideOpts">
+        <ion-slide>
+          <ion-card routerLink="/jobdetails" >
+            <ion-item lines="none" class="ion-no-padding">
+
+                <img class="slide-job-img whitehorse" src="assets/images/jobone.png">
+
+              <ion-label>
+                <h1>Bryn Mawr Riding Camp</h1>    
+                  <div active-status>
+                    <h2>$40 <span>per hour</span></h2>
+                    <span statusactive>Active</span>
+                  </div>  
+              </ion-label>
+            </ion-item>
+
+            <div card-content>
+              <ion-row>
+                <ion-col size="7" class="ion-no-padding">
+                  <ion-item lines="none">
+                    <img src="assets/images/location.svg">
+                    <ion-label>
+                      <h4>Location:</h4>
+                      <h2>Toronto, ON, Canada</h2>
+                    </ion-label>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="5" class="ion-no-padding">
+                  <ion-item lines="none">
+                    <img src="assets/images/deadline.svg">
+                    <ion-label>
+                      <h4>Deadline:</h4>
+                      <h2>May 31, 2022</h2>
+                    </ion-label>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col size="7" class="ion-no-padding">
+                  <ion-item lines="none">
+                    <img src="assets/images/deadline.svg">
+                    <ion-label>
+                      <h4>Created on:</h4>
+                      <h2>January 18, 2022</h2>
+                    </ion-label>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="5" class="ion-no-padding">
+                  <ion-item lines="none">
+                    <img src="assets/images/application.svg">
+                    <ion-label>
+                      <h4>Applications:</h4>
+                      <h2>18</h2>
+                    </ion-label>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col size="12" class="ion-no-padding">
+                  <ion-item lines="none">
+                    <img src="assets/images/facility.svg">
+                    <ion-label>
+                      <h4>Facility Type:</h4>
+                      <h2>Barrel Racing  -  Dressage</h2>
+                    </ion-label>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+
+            </div>
+            
+          </ion-card>
+        </ion-slide>
+
+        <ion-slide>
+          <ion-card routerLink="/jobdetails" >
+            <ion-item lines="none" class="ion-no-padding">
+
+                <img class="slide-job-img" src="assets/images/jobtwo.png">
+
+              <ion-label>
+                <h1>Bryn Mawr Riding Camp</h1>    
+                  <div active-status>
+                    <h2>$40 <span>per hour</span></h2>
+                    <span statusinactive>Inactive</span>
+                  </div>  
+              </ion-label>
+            </ion-item>
+
+            <div card-content>
+              <ion-row>
+                <ion-col size="7" class="ion-no-padding">
+                  <ion-item lines="none">
+                    <img src="assets/images/location.svg">
+                    <ion-label>
+                      <h4>Location:</h4>
+                      <h2>Toronto, ON, Canada</h2>
+                    </ion-label>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="5" class="ion-no-padding">
+                  <ion-item lines="none">
+                    <img src="assets/images/deadline.svg">
+                    <ion-label>
+                      <h4>Deadline:</h4>
+                      <h2>May 31, 2022</h2>
+                    </ion-label>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col size="7" class="ion-no-padding">
+                  <ion-item lines="none">
+                    <img src="assets/images/deadline.svg">
+                    <ion-label>
+                      <h4>Created on:</h4>
+                      <h2>January 18, 2022</h2>
+                    </ion-label>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="5" class="ion-no-padding">
+                  <ion-item lines="none">
+                    <img src="assets/images/application.svg">
+                    <ion-label>
+                      <h4>Applications:</h4>
+                      <h2>18</h2>
+                    </ion-label>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col size="12" class="ion-no-padding">
+                  <ion-item lines="none">
+                    <img src="assets/images/facility.svg">
+                    <ion-label>
+                      <h4>Facility Type:</h4>
+                      <h2>Barrel Racing  -  Dressage</h2>
+                    </ion-label>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+
+            </div>
+            
+          </ion-card>
+        </ion-slide>
+       
+      </ion-slides>
+	</div>
+
+  <div my-applicants> 
+    <h4 class="sec-ttl"> Applicants  <a routerLink="/myapplicants" class="rit-all"> See All</a></h4>
+
+    <ion-card routerLink="/applicantdetails" >
+      <ion-item lines="none" class="ion-no-padding">
+
+          <img class="applicant-img" src="assets/images/adam.png">
+
+        <ion-label>
+          <h1>Adam Smith</h1>    
+          <p>Bryn Mawr Riding Camp</p>
+        </ion-label>
+      </ion-item>
+
+      <div card-content>
+        <ion-row>
+          <ion-col size="7" class="ion-no-padding">
+            <ion-item lines="none">
+              <img src="assets/images/job-phone.svg">
+              <ion-label>
+                <h4>Phone:</h4>
+                <h2>+1 (629) 852693</h2>
+              </ion-label>
+            </ion-item>
+          </ion-col>
+          <ion-col size="5" class="ion-no-padding">
+            <ion-item lines="none">
+              <img src="assets/images/facility.svg">
+              <ion-label>
+                <h4>Facility Type:</h4>
+                <h2>Barrel Racing  -  Dressage</h2>
+              </ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="7" class="ion-no-padding">
+            <ion-item lines="none">
+              <img src="assets/images/deadline.svg">
+              <ion-label>
+                <h4>Applied Date/Time:</h4>
+                <h2>May 31, 2022  -  12:07am</h2>
+              </ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+      </div>
+      
+    </ion-card>
+    <ion-card routerLink="/applicantdetails" >
+      <ion-item lines="none" class="ion-no-padding">
+
+          <img class="applicant-img" src="assets/images/sara.png">
+
+        <ion-label>
+          <h1>Sarah Willson</h1>    
+          <p>Bryn Mawr Riding Camp</p>
+        </ion-label>
+      </ion-item>
+
+      <div card-content>
+        <ion-row>
+          <ion-col size="7" class="ion-no-padding">
+            <ion-item lines="none">
+              <img src="assets/images/job-phone.svg">
+              <ion-label>
+                <h4>Phone:</h4>
+                <h2>+1 (629) 852693</h2>
+              </ion-label>
+            </ion-item>
+          </ion-col>
+          <ion-col size="5" class="ion-no-padding">
+            <ion-item lines="none">
+              <img src="assets/images/facility.svg">
+              <ion-label>
+                <h4>Facility Type:</h4>
+                <h2>Barrel Racing  -  Dressage</h2>
+              </ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="7" class="ion-no-padding">
+            <ion-item lines="none">
+              <img src="assets/images/deadline.svg">
+              <ion-label>
+                <h4>Applied Date/Time:</h4>
+                <h2>May 31, 2022  -  12:07am</h2>
+              </ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+      </div>
+      
+    </ion-card>
+  </div>
+</ion-content>
+
+
+<ion-modal class="filter-modal" trigger="filter-modal">
+  <ng-template>
+    <ion-content>
+      <ion-icon (click)="modalCtrll.dismiss()" name="close-outline"></ion-icon>
+      <ion-label><h1>Filters</h1></ion-label>
+      <div form-group>
+        <ion-label>Location</ion-label>
+        <ion-item lines="none">
+          <ion-input type="text" value="Toronto, ON, Canada"></ion-input>
+        </ion-item>
+      </div>	
+      <div form-group check-item>
+
+        <ion-label>Facility Type</ion-label>
+
+        <ion-list>
+          <ion-row>
+            <ion-col size="6" class="ion-no-padding ion-no-margin">
+              <ion-item lines="none" >
+                <ion-checkbox></ion-checkbox>
+                <ion-label>Barrel Racing</ion-label>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-checkbox></ion-checkbox>
+                <ion-label>Hunter / Jumping</ion-label>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-checkbox></ion-checkbox>
+                <ion-label>Dressage</ion-label>
+              </ion-item>
+            </ion-col>
+            <ion-col size="6">
+              <ion-item lines="none">
+                <ion-checkbox></ion-checkbox>
+                <ion-label>Breeding Program</ion-label>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-checkbox></ion-checkbox>
+                <ion-label>Standardbred Racing</ion-label>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-checkbox></ion-checkbox>
+                <ion-label>Other - Western</ion-label>
+              </ion-item>
+            </ion-col>
+            <ion-col class="ion-no-padding">
+              <a routerLink="#">Show More</a>
+            </ion-col>
+          </ion-row>
+
+
+      </ion-list>
+
+      </div>
+
+      <div form-group check-item>
+
+        <ion-label>Category</ion-label>
+
+        <ion-list>
+          <ion-row>
+            <ion-col size="6" class="ion-no-padding ion-no-margin">
+              <ion-item lines="none" >
+                <ion-checkbox></ion-checkbox>
+                <ion-label>Network architect</ion-label>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-checkbox></ion-checkbox>
+                <ion-label>Systems analyst</ion-label>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-checkbox></ion-checkbox>
+                <ion-label>IT coordinator</ion-label>
+              </ion-item>
+            </ion-col>
+            <ion-col size="6">
+              <ion-item lines="none">
+                <ion-checkbox></ion-checkbox>
+                <ion-label>Network administrator</ion-label>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-checkbox></ion-checkbox>
+                <ion-label>Network engineer</ion-label>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-checkbox></ion-checkbox>
+                <ion-label>Service desk analyst</ion-label>
+              </ion-item>
+            </ion-col>
+            <ion-col class="ion-no-padding">
+              <a routerLink="#">Show More</a>
+            </ion-col>
+          </ion-row>
+
+
+      </ion-list>
+
+      </div>
+
+      <div form-group check-item>
+
+        <ion-label>Date Posted</ion-label>
+
+        <ion-list>
+          <ion-row>
+            <ion-col size="6" class="ion-no-padding ion-no-margin">
+              <ion-item lines="none" >
+                <ion-checkbox></ion-checkbox>
+                <ion-label>All</ion-label>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-checkbox></ion-checkbox>
+                <ion-label>Last 30 days</ion-label>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-checkbox></ion-checkbox>
+                <ion-label>Last 14 days</ion-label>
+              </ion-item>
+            </ion-col>
+            <ion-col size="6">
+              <ion-item lines="none">
+                <ion-checkbox></ion-checkbox>
+                <ion-label>Last 7 days</ion-label>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-checkbox></ion-checkbox>
+                <ion-label>Last 24 hours</ion-label>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-checkbox></ion-checkbox>
+                <ion-label>Last Hour</ion-label>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+
+
+      </ion-list>
+
+      </div>
+
+      <div form-group check-item>
+
+        <ion-label>Job Type</ion-label>
+
+        <ion-list>
+          <ion-row>
+            <ion-col size="6" class="ion-no-padding ion-no-margin">
+              <ion-item lines="none" >
+                <ion-checkbox></ion-checkbox>
+                <ion-label>Full Time</ion-label>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-checkbox></ion-checkbox>
+                <ion-label>Part Time</ion-label>
+              </ion-item>
+            </ion-col>
+            <ion-col size="6">
+              <ion-item lines="none">
+                <ion-checkbox></ion-checkbox>
+                <ion-label>Contract</ion-label>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-checkbox></ion-checkbox>
+                <ion-label>Seasonal</ion-label>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+
+
+      </ion-list>
+
+      </div>
+
+      <div form-group check-item>
+
+        <ion-label>Perks</ion-label>
+
+        <ion-list>
+          <ion-row>
+            <ion-col size="6" class="ion-no-padding ion-no-margin">
+              <ion-item lines="none" >
+                <ion-checkbox></ion-checkbox>
+                <ion-label>Housing Included</ion-label>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-checkbox></ion-checkbox>
+                <ion-label>Board Included</ion-label>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-checkbox></ion-checkbox>
+                <ion-label>Vehicle Included</ion-label>
+              </ion-item>
+            </ion-col>
+            <ion-col size="6">
+              <ion-item lines="none">
+                <ion-checkbox></ion-checkbox>
+                <ion-label>To Be Negotiated</ion-label>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-checkbox></ion-checkbox>
+                <ion-label>Benefits</ion-label>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-checkbox></ion-checkbox>
+                <ion-label>Training Available</ion-label>
+              </ion-item>
+            </ion-col>
+            <ion-col class="ion-no-padding">
+              <a routerLink="#">Show More</a>
+            </ion-col>
+          </ion-row>
+
+
+      </ion-list>
+
+      </div>
+
+      <div form-group check-item>
+
+        <ion-label>Travel Requirements</ion-label>
+
+        <ion-list>
+          <ion-row>
+            <ion-col size="6" class="ion-no-padding ion-no-margin">
+              <ion-item lines="none" >
+                <ion-checkbox></ion-checkbox>
+                <ion-label>Domestic Travel</ion-label>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-checkbox></ion-checkbox>
+                <ion-label>Travel within show circuit area</ion-label>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-checkbox></ion-checkbox>
+                <ion-label>North American Travel</ion-label>
+              </ion-item>
+            </ion-col>
+            <ion-col size="6">
+              <ion-item lines="none">
+                <ion-checkbox></ion-checkbox>
+                <ion-label>International Travel</ion-label>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-checkbox></ion-checkbox>
+                <ion-label>No Travel</ion-label>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-checkbox></ion-checkbox>
+                <ion-label>Other</ion-label>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+
+
+      </ion-list>
+
+      </div>
+
+      <div form-group check-item>
+
+        <ion-label>Minimum Experience</ion-label>
+
+        <ion-list>
+          <ion-row>
+            <ion-col size="6" class="ion-no-padding ion-no-margin">
+              <ion-item lines="none" >
+                <ion-checkbox></ion-checkbox>
+                <ion-label>3 - 5 Years</ion-label>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-checkbox></ion-checkbox>
+                <ion-label>2 - 3 Years</ion-label>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-checkbox></ion-checkbox>
+                <ion-label>5 - 7 Years</ion-label>
+              </ion-item>
+            </ion-col>
+            <ion-col size="6">
+              <ion-item lines="none">
+                <ion-checkbox></ion-checkbox>
+                <ion-label>8 - 10 Years</ion-label>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-checkbox></ion-checkbox>
+                <ion-label>12 - 15 Years</ion-label>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-checkbox></ion-checkbox>
+                <ion-label>3 - 5 Years</ion-label>
+              </ion-item>
+            </ion-col>
+            <ion-col class="ion-no-padding">
+              <a routerLink="#">Show More</a>
+            </ion-col>
+          </ion-row>
+
+
+      </ion-list>
+
+      </div>
+
+      <div form-group check-item>
+
+        <ion-label>Working Student Position</ion-label>
+
+        <ion-list>
+          <ion-row>
+            <ion-col size="6" class="ion-no-padding ion-no-margin">
+              <ion-item lines="none" >
+                <ion-checkbox></ion-checkbox>
+                <ion-label>Yes</ion-label>
+              </ion-item>
+            </ion-col>
+            <ion-col size="6">
+              <ion-item lines="none">
+                <ion-checkbox></ion-checkbox>
+                <ion-label>No</ion-label>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+
+
+      </ion-list>
+
+      </div>
+      <div form-group>
+        <ion-button save-btn shape="round" expand="full" color="primary">Apply Filters</ion-button>
+      </div>
+    </ion-content>
+  </ng-template>
+</ion-modal>

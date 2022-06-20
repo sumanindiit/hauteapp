@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar lines="none">
+ <ion-title class="ttl-left">
+   My Profile
+ </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div my-profile>
+    <ion-label profile-img-div>
+      <ion-thumbnail class="profile-pic">
+        <img src="assets/images/profile-img.png">
+        <img class="edit-image" src="assets/images/edit-img.svg">     
+      </ion-thumbnail>
+      <h1>Patrick Johnson</h1>
+      <h2>Sr. Front End Developer</h2>
+    </ion-label>
+     <ion-list choose-mtd-lst>
+       <ion-item detail="false" lines="none" routerLink="/account">
+        <ion-title class="ion-text-left">Account</ion-title>
+        <ion-label slot="end"><img src="assets/images/profile-arrow.svg"></ion-label>
+       </ion-item>
+       <ion-item detail="false" lines="none" routerLink="/companyinformation">
+        <ion-title class="ion-text-left">Company</ion-title>
+        <ion-label slot="end"><img src="assets/images/profile-arrow.svg"></ion-label>
+       </ion-item>
+       <ion-item detail="false" lines="none" routerLink="/mysubscription">
+        <ion-title class="ion-text-left">My Subscription</ion-title>
+        <ion-label slot="end"><img src="assets/images/profile-arrow.svg"></ion-label>
+       </ion-item>
+       <ion-item detail="false" lines="none" routerLink="/packages">
+        <ion-title class="ion-text-left">Packages</ion-title>
+        <ion-label slot="end"><img src="assets/images/profile-arrow.svg"></ion-label>
+       </ion-item>
+       <ion-item detail="false" lines="none" routerLink="/tabs/tabs/my-jobs">
+        <ion-title class="ion-text-left">My jobs</ion-title>
+        <ion-label slot="end"><img src="assets/images/profile-arrow.svg"></ion-label>
+       </ion-item>
+       <ion-item detail="false" lines="none" routerLink="/add-card">
+        <ion-title class="ion-text-left">Payment Cards</ion-title>
+        <ion-label slot="end"><img src="assets/images/profile-arrow.svg"></ion-label>
+       </ion-item>
+
+     </ion-list>
+   </div>
+</ion-content>

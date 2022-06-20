@@ -1,0 +1,202 @@
+ion-header {
+	position: relative;
+    width: 100%;
+    padding: 0 15px;
+    background: #fafcff;
+	&:after {
+		display: none;
+	}
+	ion-toolbar {
+		--border-width: 0px;
+	    --min-height: 65px;
+	    --background: transparent;
+	    ion-title{
+	    	    font-size: 18px;
+			    font-family: var(--ion-poppins-font);
+			    font-weight: 600;
+			    color: var(--ion-color-dark);
+	    }
+	    ion-back-button{
+	    	  color: var(--ion-color-dark);
+	    	   font-size: 12px;
+	    }
+	}
+}
+
+ion-content {
+    --background: #FAFCFF;
+	background: #FAFCFF;
+	[addcard] 
+		{
+			background: transparent;
+		    padding: 10px 20px;
+		    position: relative;
+		    z-index: 1;
+		    margin-top: 0;
+			[cardslide1]{
+				margin-bottom: 20px;
+				ion-item{
+					padding: 0;
+		--background: transparent;
+		--inner-padding-end: 0;
+            [visa-deflt-card]{
+                background-image: url('../../assets/images/visa-bl.png');
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+				background-position: center center;
+				position: relative;
+				padding: 10px 0;
+				width: 100%;
+                ion-item{
+                    --background: transparent;
+					align-items: center;
+					span{
+						img{
+							margin-top: 15px;
+						}
+					}
+					[deflt-btn]{
+						position: absolute;
+						right: 0;
+						padding: 8px 14px;
+						font-size: 11px;
+						color: #fff;
+						background: #596A8A;
+						border-radius: 25px 0px 0px 25px;
+						top: 11px;
+					}
+					[card-numbr]{
+						display:flex;
+						justify-content: space-between;
+
+						width: 100%;
+						ul{
+							padding: 0;
+							margin: 5px 20px 0 0px;
+							li{
+								display:inline-block;
+								color: #fff;
+								font-size: 15px;
+								letter-spacing: 5px;
+							}
+						}
+					}
+					h2{
+						color:#fff;
+						opacity: 0.5;
+						font-size: 10px;
+						line-height: 15px;
+					}
+					h1{
+						color:#fff;
+						font-size: 14px;
+						line-height: 21px;
+					}
+                }
+            }	    	
+	}
+	[edit-delte-btn]{
+		display: flex;
+		flex-direction: column;
+		background: #16233c;
+		justify-content: space-around;
+		padding: 20px;
+		border-radius: 12px;
+	}
+}
+[cardslide2]{
+	ion-item{
+		padding: 0;
+		--background: transparent;
+		--inner-padding-end: 0;
+[visa-deflt-card]{
+	background-image: url('../../assets/images/white-card.svg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	position: relative;
+	padding: 10px 0;
+	width: 100%;
+	background-color: #fff;
+    border-radius: 10px;
+	ion-item{
+		--background: transparent;
+		align-items: center;
+		span{
+			img{
+				margin-top: 15px;
+			}
+		}
+		[card-numbr]{
+			display:flex;
+			justify-content: space-between;
+
+			width: 100%;
+			ul{
+				padding: 0;
+				margin: 5px 20px 0 0px;
+				li{
+					display:inline-block;
+					color: #939393;
+					font-size: 15px;
+					letter-spacing: 5px;
+				}
+			}
+		}
+		h2{
+			color:#939393;
+			opacity: 0.5;
+			font-size: 10px;
+			line-height: 15px;
+		}
+		h1{
+			color:#000;
+			font-size: 14px;
+			line-height: 21px;
+		}
+	}
+
+}	    	
+}
+[edit-delte-btn]{
+display: flex;
+flex-direction: column;
+background: #16233c;
+justify-content: space-around;
+padding: 20px;
+border-radius: 12px;
+}
+}
+}
+}
+
+ion-footer {
+	padding: 20px;
+    background: #fafcff;
+    --background: #fafcff;
+		ion-button {
+		    --box-shadow: none;
+		    min-height: 55px;
+		    color: var(--ion-color-white);
+		    --border-radius: 5px;
+		    font-size: 16px;
+		    font-weight: 400;
+		    text-transform: capitalize;
+		    margin: 0px;
+		    font-family: var(--ion-poppins-font);
+		    letter-spacing: 0;
+		}
+}
+
+::ng-deep{
+	ion-item-sliding{
+		--background: #16233C;
+		background: #16233C;
+		border-radius: 12.9851px;
+		overflow: inherit;
+		box-shadow: 0px 5px 20px rgb(0 0 0 / 15%);
+	}
+	.item-options-ios.item-options-end {
+		border-bottom-width: 0;
+	}
+}

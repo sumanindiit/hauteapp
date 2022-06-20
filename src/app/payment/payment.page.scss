@@ -1,0 +1,56 @@
+ion-header {
+	position: relative;
+    width: 100%;
+	padding: 0 15px;
+    background: #fafcff;
+	&:after {
+		display: none;
+	}
+	ion-toolbar {
+		--border-width: 0px;
+	    --min-height: 65px;
+	    --background: transparent;
+	    ion-title{
+	    	    font-size: 18px;
+			    font-family: var(--ion-poppins-font);
+			    font-weight: 600;
+			    color: var(--ion-color-dark);
+	    }
+	    ion-back-button{
+	    	  color: var(--ion-color-dark);
+	    	   font-size: 12px;
+	    }
+	}
+}
+
+ion-content {
+    --background: #FAFCFF;
+	background: #FAFCFF;
+	[choose-payment-method] {
+		background: transparent;
+	    padding: 10px 20px;
+	    position: relative;
+	    z-index: 1;
+	    margin-top: 0;
+		ion-list {
+			background: transparent !important;
+			contain: initial;
+			ion-item {
+				padding: 15px;
+				--inner-padding-end: 0;
+				--padding-start:10px;
+			    border-radius: 12px;
+			    margin-bottom: 20px;
+			    --detail-icon-color: var(--ion-color-primary);
+			    --detail-icon-opacity: 1;
+			    --background-hover: #fff;
+			    background: #fff;
+			    box-shadow: 0px 4px 14px rgba(22, 35, 60, 0.06);
+				ion-icon {
+					color: #A7A7A7;
+					font-size: 26px;
+				}
+			}
+		}
+		}
+}

@@ -1,0 +1,245 @@
+<ion-header [class.show-background]="showToolbar">
+  <ion-toolbar>
+    <ion-buttons slot="start"><img src="assets/images/emavtar.png" /> <span>Hey </span> Alex!</ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [scrollEvents]="true" (ionScroll)="onScroll($event)">
+  <ion-card bgimg>
+    <img src="assets/images/home-bg.png" />
+  </ion-card>
+  <div class="search-top">
+    <div class="serch-bx">
+      <ion-icon name="search-outline"></ion-icon>
+      <ion-input placeholder="Job Title, Keywords, or Phrase"></ion-input>
+      <a href="javascript:void(0)" id="filter-modal-em" class="filtr-ic">
+        <ion-icon name="options-outline"></ion-icon>
+      </a>
+    </div>
+
+  </div>
+
+  <div filter-bar>
+    <ion-grid class="ion-no-padding">
+      <ion-row>
+        <ion-col size="2">
+          <h1>Filters:</h1>
+        </ion-col>
+        <ion-col size="10">
+          <ion-slides pager="false" [options]="slideOpts1">
+            <ion-slide>
+              <ion-badge>Fulltime</ion-badge>
+            </ion-slide>
+            <ion-slide>
+              <ion-badge>New York</ion-badge>
+            </ion-slide>
+            <ion-slide>
+              <ion-badge>UI/UX Design</ion-badge>
+            </ion-slide>
+            <ion-slide>
+              <ion-badge>Part Time</ion-badge>
+            </ion-slide>
+          </ion-slides>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div em-home-pge>
+    <h4 class="sec-ttl"> Latest Jobs <a routerLink="/em-all-jobs" class="rit-all"> See All</a></h4>
+    <div myjobs-pge>
+      <ng-container *ngIf="alljobs.length < 0" class="alert alert-danger" role="alert"
+        style="color: red;font-size: 17px;text-align: center;font-weight: 600;">
+        <ion-card>
+          <ion-item>
+            <p>No Jobs found!</p>
+          </ion-item>
+
+        </ion-card>
+
+      </ng-container>
+
+      <ng-container *ngIf="alljobs">
+        <ion-card routerLink="/em-job-details/{{jobs.id}}" *ngFor="let jobs of alljobs">
+          <ion-item lines="none" class="ion-no-padding">
+
+            <img class="job-img whitehorse" src="{{ jobs?.image }}">
+
+            <ion-label>
+              <h1>{{ jobs?.title }}</h1>
+              <div active-status>
+                <h2>$40 <span>per hour</span></h2>
+                <span statusactive>Active</span>
+              </div>
+            </ion-label>
+          </ion-item>
+
+          <div card-content>
+            <ion-row>
+              <ion-col size="7" class="ion-no-padding">
+                <ion-item lines="none">
+                  <img src="assets/images/location.svg">
+                  <ion-label>
+                    <h4>Location:</h4>
+                    <h2>{{ jobs?.job_city_title }}</h2>
+                  </ion-label>
+                </ion-item>
+              </ion-col>
+              <ion-col size="5" class="ion-no-padding">
+                <ion-item lines="none">
+                  <img src="assets/images/deadline.svg">
+                  <ion-label>
+                    <h4>Deadline:</h4>
+                    <h2>{{ jobs?.expiry }}</h2>
+                  </ion-label>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col size="7" class="ion-no-padding">
+                <ion-item lines="none">
+                  <img src="assets/images/deadline.svg">
+                  <ion-label>
+                    <h4>Created on:</h4>
+                    <h2>{{ jobs?.post_date }}</h2>
+                  </ion-label>
+                </ion-item>
+              </ion-col>
+              <ion-col size="5" class="ion-no-padding">
+                <ion-item lines="none">
+                  <img src="assets/images/application.svg">
+                  <ion-label>
+                    <h4>Salary:</h4>
+                    <h2>{{ jobs?.salary }}</h2>
+                  </ion-label>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="jobs?.facility_type.length > 0">
+              <ion-col size="12" class="ion-no-padding">
+                <ion-item lines="none">
+                  <img src="assets/images/facility.svg">
+                  <ion-label>
+                    <h4>Facility Type:</h4>
+                    <ng-container *ngFor="let facility of jobs.facility_type">
+                      <h2>{{ facility.term_name}}</h2>
+                    </ng-container>
+
+                  </ion-label>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+          </div>
+
+        </ion-card>
+      </ng-container>
+
+
+    </div>
+  </div>
+
+</ion-content>
+
+
+<ion-modal class="filter-modal-em overlay-hidden" trigger="filter-modal-em">
+  <ng-template>
+    <ion-content>
+      <ion-icon (click)="modalCtrll.dismiss()" name="close-outline"></ion-icon>
+      <ion-label>
+        <h1>Filters</h1>
+      </ion-label>
+      <div form-group>
+        <ion-label>Location</ion-label>
+        <ion-item lines="none">
+          <ion-searchbar class="location-search" mode="ios" [(ngModel)]="autocomplete.query" [showCancelButton]="false"
+            (ionInput)="updateSearch()" (ionCancel)="dismiss()" (ionClear)="dismiss()" placeholder="">
+          </ion-searchbar>
+          <!--ion-input type="text" value="Toronto, ON, Canada"></ion-input--->
+        </ion-item>
+      </div>
+      <div form-group check-item>
+
+        <ion-label>Facility Type</ion-label>
+
+        <ion-list>
+          <ion-row>
+            <div class="flexdiv showcontainer" [class.show]="show">
+              <ion-item lines="none" *ngFor="let facility of facilityFilterArray">
+                <ion-checkbox [(ngModel)]="facility.checked" [value]="facility.value"></ion-checkbox>
+                <ion-label>{{ facility.name}}</ion-label>
+              </ion-item>
+            </div>
+            <ion-col class="ion-no-padding">
+              <a (click)="show = !show">{{ show ? 'Show less': 'Show More' }}</a>
+            </ion-col>
+          </ion-row>
+
+
+        </ion-list>
+
+      </div>
+
+      <div form-group check-item>
+
+        <ion-label>Date Posted</ion-label>
+
+        <ion-list>
+          <div class="flexdiv">
+            <ion-item lines="none" *ngFor="let datePosted of filters?.date_posted">
+              <ion-checkbox [(ngModel)]="datePosted.checked" [value]="datePosted.value"></ion-checkbox>
+              <ion-label>{{ datePosted.name}}</ion-label>
+            </ion-item>
+          </div>
+        </ion-list>
+
+      </div>
+
+      <div form-group check-item>
+
+        <ion-label>Job Type</ion-label>
+
+        <ion-list>
+          <ion-row>
+            <div class="flexdiv">
+              <ion-item lines="none" *ngFor="let jobType of filters?.jobType">
+                <ion-checkbox [(ngModel)]="jobType.checked" [value]="jobType.value"></ion-checkbox>
+                <ion-label>{{ jobType.name }}</ion-label>
+              </ion-item>
+            </div>
+          </ion-row>
+
+
+        </ion-list>
+
+      </div>
+
+      <div form-group check-item *ngFor="let candCustomFields of filters?.candCustomFields">
+
+        <ion-label>{{ candCustomFields.label }}</ion-label>
+
+        <ion-list>
+          <ion-row>
+            <div class="flexdiv">
+              <ion-item lines="none" *ngFor="let item of candCustomFields.data">
+                <ion-checkbox [(ngModel)]="item.checked" [value]="item.value"></ion-checkbox>
+                <ion-label>{{ item.name }}</ion-label>
+              </ion-item>
+            </div>
+          </ion-row>
+
+
+        </ion-list>
+
+      </div>
+
+
+      <div form-group>
+        <ion-button (click)="getFilterValues()" save-btn shape="round" expand="full" color="primary">Apply Filters
+        </ion-button>
+      </div>
+    </ion-content>
+  </ng-template>
+</ion-modal>

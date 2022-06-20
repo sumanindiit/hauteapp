@@ -1,0 +1,59 @@
+<ion-header mode="ios">
+   <ion-toolbar lines="none">
+    <ion-back-button slot="start" defaultHref="/payment" text="" icon="arrow-back-outline"></ion-back-button>
+	<ion-title class="ttl-left">
+		Add Card
+	</ion-title>
+   </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<div addpaymentcard>
+			<ion-row>
+				<ion-col size="12">
+					<div form-group>
+						<ion-label>Card Holder Name</ion-label>
+						<ion-item lines="none">
+							<ion-input type="text" placeholder="First Card Holder Name" value="Patrick Johnson"></ion-input>
+						</ion-item>
+					</div>	
+				</ion-col>
+				<ion-col size="12">
+					<div form-group>
+						<ion-label>Card Number</ion-label>
+						<ion-item lines="none">
+							<ion-input type="text" placeholder="Enter Card Number" value="1234567891231324234"></ion-input>
+						</ion-item>
+					</div>	
+				</ion-col>
+				<ion-col size="6">
+					<div form-group>
+						<ion-label>CVV</ion-label>
+						<ion-item lines="none">
+							<ion-input type="text" placeholder="CVV" value="296"></ion-input>
+						</ion-item>
+					</div>	
+				</ion-col>
+				<ion-col size="6">
+					<div form-group>
+						<ion-label>Expiry Date</ion-label>
+						<ion-item lines="none">
+							<ion-input type="text" placeholder="" value="05 / 2025"></ion-input>
+						</ion-item>
+					</div>	
+				</ion-col>
+				<ion-col size="12">
+					<div check-form-group>
+						<ion-item lines="none">
+							<ion-checkbox mode="md" ></ion-checkbox>
+							<ion-label>Make this card as Default Card</ion-label>
+							
+						</ion-item>
+					</div>
+				</ion-col>
+			</ion-row>		
+	</div>
+</ion-content>
+<ion-footer>
+	<ion-button save-btn shape="round" expand="full" color="primary"  routerLink="/em-subscription">Proceed to checkout</ion-button>	
+</ion-footer>

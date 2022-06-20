@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar lines="none">
+   <ion-back-button slot="start"  defaultHref="/" text="" icon="arrow-back-outline"></ion-back-button>
+ <ion-title class="ttl-left">
+   Push Notification
+ </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div choose-payment-method>
+     <ion-list choose-mtd-lst class="bg-transparent">
+       <ion-item class="item-background-color" detail="false" lines="none" routerLink="#">
+        <ion-title class="ion-text-left">Show Notifications</ion-title>
+        <ion-toggle slot="end" checked></ion-toggle>
+       </ion-item>
+       <ion-item detail="false" lines="none" routerLink="#">
+        <ion-title class="ion-text-left">Chat Notifications</ion-title>
+        <ion-toggle slot="end"></ion-toggle>
+       </ion-item>
+       <ion-item detail="false" lines="none" routerLink="#">
+        <ion-title class="ion-text-left">New Applicant applied</ion-title>
+        <ion-toggle slot="end"></ion-toggle>
+       </ion-item>
+     </ion-list>
+   </div>
+</ion-content>
+<ion-footer>
+  <ion-button save-btn shape="round" expand="full" color="primary">Submit</ion-button>	
+</ion-footer>

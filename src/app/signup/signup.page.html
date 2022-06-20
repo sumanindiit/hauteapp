@@ -1,0 +1,127 @@
+<ion-content>
+  <div loginbg-img>
+    <img src="assets/images/logo.png" />
+  </div>
+  <div form-field>
+    <div form-field-top>
+      <div form-head>
+        <h2>Sign Up!</h2>
+        <p>Create a new account</p>
+      </div>
+      <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()" novalidate>
+        <div form-group>
+          <ion-item lines="none">
+            <ion-select formControlName="accountType" [interfaceOptions]="customActionSheetOptions"
+              placeholder="Select User Type" interface="action-sheet" (ionChange)="onChange($event)" value="employee">
+              <ion-select-option value="jobsearch_candidate">Employee</ion-select-option>
+              <ion-select-option value="jobsearch_employer">Employer</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item class='form-text error' *ngIf="submitAttempt && errorCtr.accountType.errors?.required">
+            <ion-label no-margin stacked>Please select account type.</ion-label>
+          </ion-item>
+        </div>
+        <img class="hr-line" src="assets/images/dash-line.svg" />
+        <div form-group>
+          <ion-item lines="none">
+            <ion-label><img src="assets/images/user-icon.svg" /></ion-label>
+            <ion-input formControlName="firstName" type="text" placeholder="First Name"></ion-input>
+          </ion-item>
+          <ion-item class="form-text error" *ngIf="submitAttempt && errorCtr.firstName.errors?.required">
+            <ion-label no-margin stacked>First Name is required.</ion-label>
+          </ion-item>
+          <ion-item class="form-text error" *ngIf="submitAttempt && errorCtr.firstName.errors?.minlength">
+            <ion-label no-margin stacked>Min 3 chars long.</ion-label>
+          </ion-item>
+          <ion-item class="form-text error" *ngIf="submitAttempt && errorCtr.firstName.errors?.pattern">
+            <ion-label no-margin stacked>Only alphabets allowed.</ion-label>
+          </ion-item>
+        </div>
+        <div form-group>
+          <ion-item lines="none">
+            <ion-label><img src="assets/images/user-icon.svg" /></ion-label>
+            <ion-input formControlName="lastName" type="text" placeholder="Last Name"></ion-input>
+          </ion-item>
+          <ion-item class="form-text error" *ngIf="submitAttempt && errorCtr.lastName.errors?.required">
+            <ion-label no-margin stacked>Last Name is required.</ion-label>
+          </ion-item>
+          <ion-item class="form-text error" *ngIf="submitAttempt && errorCtr.lastName.errors?.minlength">
+            <ion-label no-margin stacked>Min 3 chars long.</ion-label>
+          </ion-item>
+          <ion-item class="form-text error" *ngIf="submitAttempt && errorCtr.lastName.errors?.pattern">
+            <ion-label no-margin stacked>Only alphabets allowed.</ion-label>
+          </ion-item>
+        </div>
+        <div form-group>
+          <ion-item lines="none">
+            <ion-label><img src="assets/images/email.svg" /></ion-label>
+            <ion-input formControlName="email" type="text" placeholder="Email"></ion-input>
+          </ion-item>
+          <ion-item class="form-text error" *ngIf="submitAttempt && errorCtr.email.errors?.required">
+            <ion-label no-margin stacked>Email is required.</ion-label>
+          </ion-item>
+          <ion-item class="form-text error" *ngIf="submitAttempt && errorCtr.email.errors?.pattern">
+            <ion-label no-margin stacked>Enter valid email.</ion-label>
+          </ion-item>
+        </div>
+        <div form-group>
+          <ion-item lines="none">
+            <ion-label><img src="assets/images/phone.svg" /></ion-label>
+            <ion-input formControlName="phoneNo" type="number" placeholder="Phone Number"></ion-input>
+          </ion-item>
+          <ion-item class="form-text error" *ngIf="submitAttempt && errorCtr.phoneNo.errors?.required">
+            <ion-label no-margin stacked>Phone number is required.</ion-label>
+          </ion-item>
+          <ion-item class="form-text error" *ngIf="submitAttempt && errorCtr.phoneNo.errors?.pattern">
+            <ion-label no-margin stacked>Number values allowed.</ion-label>
+          </ion-item>
+        </div>
+        <div form-group>
+          <ion-item lines="none">
+            <ion-label><img src="assets/images/lock.svg" /></ion-label>
+            <ion-input [type]="passwordType" formControlName="password" placeholder="Password"></ion-input>
+            <span class="icon-pss">
+              <ion-icon [name]="passwordIcon" (click)='hideShowPassword()'></ion-icon>
+            </span>
+          </ion-item>
+          <ion-item class='form-text error' *ngIf="submitAttempt && errorCtr.password.errors?.required">
+            <ion-label no-margin stacked>Password is required.</ion-label>
+          </ion-item>
+          <ion-item class='form-text error' *ngIf="submitAttempt && errorCtr.password.errors?.pattern">
+            <ion-label no-margin stacked wrap-text>Password must be between 6 and 12 characters with at least one
+              capital letter, one small letter, and one digit.</ion-label>
+          </ion-item>
+        </div>
+        <div form-group>
+          <ion-item lines="none">
+            <ion-label><img src="assets/images/lock.svg" /></ion-label>
+            <ion-input [type]="confirmPasswordType" formControlName="confirmPassword" placeholder="Confirm Password">
+            </ion-input>
+            <span class="icon-pss">
+              <ion-icon [name]="confirmPasswordIcon" (click)='hideShowConfirmPassword()'></ion-icon>
+            </span>
+          </ion-item>
+          <ion-item class='form-text error' *ngIf="submitAttempt && errorCtr.confirmPassword.errors?.required">
+            <ion-label no-margin stacked>Confirm Password is required.</ion-label>
+          </ion-item>
+          <ion-item class='form-text error'
+            *ngIf="submitAttempt && !errorCtr.confirmPassword.errors?.required && signUpForm.hasError('mismatchedPasswords') ">
+            <ion-label no-margin stacked>Passwords do not match</ion-label>
+          </ion-item>
+        </div>
+        <div login-btn>
+          <ion-button expand="full" color="primary" shape="round" type="submit">
+            Sign Up
+          </ion-button>
+        </div>
+      </form>
+    </div>
+
+    <div btn-signup class="ion-text-center">
+      <p>
+        Already have account?
+        <a href="javascript:void(0)" routerLink="/login">Login Here</a>
+      </p>
+    </div>
+  </div>
+</ion-content>

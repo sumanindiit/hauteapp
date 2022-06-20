@@ -1,0 +1,27 @@
+<ion-header mode="ios">
+   <ion-toolbar lines="none">
+    <ion-back-button slot="start"  defaultHref="/subscription" text="" icon="arrow-back-outline"></ion-back-button>
+	<ion-title class="ttl-left">
+		Payment
+	</ion-title>
+   </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	 <div choose-payment-method>
+      <ion-list choose-mtd-lst>
+        <ion-item detail="false" lines="none" routerLink="/add-payment-card">
+         <img src="assets/images/Stripe.svg">
+         <ion-buttons slot="end">
+           <ion-icon name="arrow-forward-outline"></ion-icon>
+         </ion-buttons>
+        </ion-item>
+        <ion-item detail="false" lines="none" routerLink="/add-payment-card">
+          <img src="assets/images/paypal.svg">
+          <ion-buttons slot="end">
+            <ion-icon name="arrow-forward-outline"></ion-icon>
+          </ion-buttons>
+        </ion-item>
+      </ion-list>
+    </div>
+</ion-content>

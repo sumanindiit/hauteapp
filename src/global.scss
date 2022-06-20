@@ -1,0 +1,518 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import "~@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+html,
+body {
+  font-family: var(--ion-poppins-font) !important;
+  --ion-default-font: var(--ion-poppins-font) !important;
+}
+
+ion-header {
+  ion-title {
+    font-family: var(--ion-montserrat-font) !important;
+  }
+}
+
+[subscriptionslider] ion-slide.swiper-slide-active {
+  transform: scale(1) !important;
+}
+
+.ionModal {
+  --width: 90%;
+  --max-height: 70%;
+  --border-radius: 8px;
+  [icon-header] {
+    position: fixed;
+    width: 25%;
+    top: 0;
+    z-index: 2;
+    right: 0;
+    ion-icon {
+      font-size: 20px;
+    }
+  }
+  ion-item {
+    --background: transparent;
+    background: transparent;
+  }
+  ion-label {
+    h1 {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 22px;
+      letter-spacing: -0.3px;
+      color: #000000;
+      text-align: center;
+      margin-bottom: 25px;
+      margin-top: 40px;
+    }
+  }
+  [form-group] {
+    padding: 0 15px;
+    margin: 20px 0;
+    ion-item {
+      ion-checkbox {
+        --border-radius: 5px;
+        --size: 20px;
+        --background-checked: #fff;
+        --checkmark-color: #16233c;
+        --checkmark-width: 3px;
+        --border-color: #b9b9b9;
+        --border-color-checked: #b9b9b9;
+      }
+      ion-label {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+        letter-spacing: 0.272222px;
+        color: #000000;
+      }
+    }
+  }
+  [check-item] {
+    ion-list {
+      --background: #ecf2f0;
+      background: #ecf2f0;
+      padding: 0px 15px 15px 15px;
+      border-radius: 10px;
+      margin-top: 10px;
+      ion-item {
+        --background: #fff !important;
+      }
+    }
+  }
+  [save-btn] {
+    --box-shadow: none;
+    min-height: 55px;
+    color: var(--ion-color-white);
+    --border-radius: 8px;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin: 0px;
+    font-family: var(--ion-poppins-font);
+    letter-spacing: 0;
+  }
+}
+
+.filter-modal {
+  --width: 100%;
+  --max-height: 100%;
+  --border-radius: 50px 50px 0 0;
+  padding-top: 100px;
+  ion-icon {
+    font-size: 26px;
+    position: absolute;
+    right: 30px;
+    top: 20px;
+  }
+
+  ion-item {
+    --background: transparent;
+    background: transparent;
+  }
+  ion-label {
+    h1 {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 22px;
+      letter-spacing: -0.3px;
+      color: #000000;
+      text-align: center;
+      margin-bottom: 25px;
+      margin-top: 30px;
+    }
+  }
+  [form-group] {
+    padding: 0 15px;
+    margin: 20px 0;
+    ion-label {
+      font-size: 15px;
+      font-weight: 600;
+      color: #43444f;
+    }
+    ion-item {
+      --padding-top: 0;
+      --padding-start: 15px;
+      background: var(--ion-color-secondary);
+      --background: var(--ion-color-secondary);
+      border-radius: 8px;
+      --min-height: 55px;
+      margin-top: 10px;
+      --padding-bottom: 0;
+      ion-input,
+      ion-select,
+      ion-textarea {
+        font-size: 14px;
+        --placeholder-font-weight: 500;
+        font-weight: 600;
+        --placeholder-color: var(--ion-color-primary);
+        --placeholder-opacity: 0.6;
+        color: var(--ion-color-primary);
+        --padding-top: 0;
+        --padding-bottom: 0;
+        font-family: var(--ion-poppins-font);
+      }
+      ion-checkbox {
+        --border-radius: 5px;
+        --size: 20px;
+        --background-checked: #fff;
+        --checkmark-color: #16233c;
+        --checkmark-width: 3px;
+        --border-color: #b9b9b9;
+        --border-color-checked: #b9b9b9;
+      }
+      ion-label {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+        letter-spacing: 0.272222px;
+        color: #000000;
+      }
+    }
+  }
+  [check-item] {
+    margin: 40px 20px 20px;
+    border-bottom: 1px solid #00000047;
+    padding: 0 0 35px 0;
+    ion-list {
+      --background: transparent;
+      background: transparent;
+      padding: 0px;
+      border-radius: 10px;
+      margin-top: 10px;
+      ion-item {
+        --background: transparent;
+        background: transparent;
+        --padding-start: 0;
+        --min-height: 0;
+        margin-top: 0;
+      }
+      a {
+        font-weight: 800;
+        font-size: 10px;
+        line-height: 16px;
+        color: #2a3746;
+        text-decoration: none;
+      }
+    }
+  }
+  [save-btn] {
+    --box-shadow: none;
+    min-height: 55px;
+    color: var(--ion-color-white);
+    --border-radius: 8px;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin: 0px;
+    font-family: var(--ion-poppins-font);
+    letter-spacing: 0;
+  }
+}
+.filter-modal-em {
+  --width: 100%;
+  --max-height: 100%;
+  --border-radius: 50px 50px 0 0;
+  padding-top: 100px;
+  ion-icon {
+    font-size: 26px;
+    position: absolute;
+    right: 30px;
+    top: 20px;
+  }
+
+  ion-item {
+    --background: transparent;
+    background: transparent;
+  }
+  ion-label {
+    h1 {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 22px;
+      letter-spacing: -0.3px;
+      color: #000000;
+      text-align: center;
+      margin-bottom: 25px;
+      margin-top: 30px;
+    }
+  }
+  [form-group] {
+    padding: 0 15px;
+    margin: 20px 0;
+    ion-label {
+      font-size: 15px;
+      font-weight: 600;
+      color: #43444f;
+    }
+    ion-item {
+      --padding-top: 0;
+      --padding-start: 15px;
+      background: var(--ion-color-secondary);
+      --background: var(--ion-color-secondary);
+      border-radius: 8px;
+      --min-height: 55px;
+      margin-top: 10px;
+      --padding-bottom: 0;
+      ion-input,
+      ion-select,
+      ion-textarea {
+        font-size: 14px;
+        --placeholder-font-weight: 500;
+        font-weight: 600;
+        --placeholder-color: var(--ion-color-primary);
+        --placeholder-opacity: 0.6;
+        color: var(--ion-color-primary);
+        --padding-top: 0;
+        --padding-bottom: 0;
+        font-family: var(--ion-poppins-font);
+      }
+      ion-checkbox {
+        --border-radius: 5px;
+        --size: 20px;
+        --background-checked: #fff;
+        --checkmark-color: #16233c;
+        --checkmark-width: 3px;
+        --border-color: #b9b9b9;
+        --border-color-checked: #b9b9b9;
+      }
+      ion-label {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+        letter-spacing: 0.272222px;
+        color: #000000;
+      }
+    }
+  }
+  [check-item] {
+    margin: 40px 20px 20px;
+    border-bottom: 1px solid #00000047;
+    padding: 0 0 35px 0;
+    ion-list {
+      --background: transparent;
+      background: transparent;
+      padding: 0px;
+      border-radius: 10px;
+      margin-top: 10px;
+      ion-item {
+        --background: transparent;
+        background: transparent;
+        --padding-start: 0;
+        --min-height: 0;
+        margin-top: 0;
+      }
+      a {
+        font-weight: 800;
+        font-size: 10px;
+        line-height: 16px;
+        color: #2a3746;
+        text-decoration: none;
+      }
+    }
+  }
+  [save-btn] {
+    --box-shadow: none;
+    min-height: 55px;
+    color: var(--ion-color-white);
+    --border-radius: 8px;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin: 0px;
+    font-family: var(--ion-poppins-font);
+    letter-spacing: 0;
+  }
+}
+.filter-applicants {
+  --width: 100%;
+  --max-height: 100%;
+  --border-radius: 50px 50px 0 0;
+  padding-top: 300px;
+  ion-icon {
+    font-size: 26px;
+    position: absolute;
+    right: 30px;
+    top: 20px;
+  }
+  ion-item {
+    --background: transparent;
+    background: transparent;
+  }
+  ion-label {
+    h1 {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 22px;
+      letter-spacing: -0.3px;
+      color: #000000;
+      text-align: center;
+      margin-bottom: 25px;
+      margin-top: 40px;
+    }
+  }
+  [form-group] {
+    padding: 0 15px;
+    margin: 20px 0;
+    ion-label {
+      font-size: 15px;
+      font-weight: 600;
+      color: #43444f;
+    }
+    ion-item {
+      --padding-top: 0;
+      --padding-start: 15px;
+      background: var(--ion-color-secondary);
+      --background: var(--ion-color-secondary);
+      border-radius: 8px;
+      --min-height: 55px;
+      margin-top: 10px;
+      --padding-bottom: 0;
+      ion-input,
+      ion-select,
+      ion-textarea {
+        font-size: 14px;
+        --placeholder-font-weight: 500;
+        font-weight: 600;
+        --placeholder-color: var(--ion-color-primary);
+        --placeholder-opacity: 0.6;
+        color: var(--ion-color-primary);
+        --padding-top: 0;
+        --padding-bottom: 0;
+        font-family: var(--ion-poppins-font);
+      }
+      ion-select {
+        min-width: 100%;
+      }
+      ion-select::part(icon) {
+        content: url("/assets/images/chevron-down.svg");
+        opacity: 1;
+      }
+      ion-checkbox {
+        --border-radius: 5px;
+        --size: 20px;
+        --background-checked: #fff;
+        --checkmark-color: #16233c;
+        --checkmark-width: 3px;
+        --border-color: #b9b9b9;
+        --border-color-checked: #b9b9b9;
+      }
+      ion-label {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+        letter-spacing: 0.272222px;
+        color: #000000;
+      }
+    }
+  }
+  [check-item] {
+    margin: 40px 20px 20px;
+    border-bottom: 1px solid #00000047;
+    padding: 0 0 35px 0;
+    ion-list {
+      --background: transparent;
+      background: transparent;
+      padding: 0px;
+      border-radius: 10px;
+      margin-top: 10px;
+      ion-item {
+        --background: transparent;
+        background: transparent;
+        --padding-start: 0;
+        --min-height: 0;
+        margin-top: 0;
+      }
+      a {
+        font-weight: 800;
+        font-size: 10px;
+        line-height: 16px;
+        color: #2a3746;
+        text-decoration: none;
+      }
+    }
+  }
+  [save-btn] {
+    --box-shadow: none;
+    min-height: 55px;
+    color: var(--ion-color-white);
+    --border-radius: 8px;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin: 0px;
+    font-family: var(--ion-poppins-font);
+    letter-spacing: 0;
+  }
+}
+
+.show-background {
+  background-color: #16233c;
+}
+
+ion-item {
+  &.ion-activated {
+    --background-activated-opacity: 0;
+  }
+}
+ion-header {
+  ion-title {
+    display: inherit;
+  }
+}
+
+.applicant-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.job-img {
+  width: 75px;
+  height: 75px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.slide-job-img {
+  width: 70px !important;
+  height: 70px !important;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.whitehorse {
+  border: 1px solid #e0e0e0;
+}
+.error {
+  color: red;
+  font-size: 13px;
+  ion-label{
+     white-space: normal !important;
+  }
+}

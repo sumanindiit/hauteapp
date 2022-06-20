@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar lines="none">
+    <ion-back-button slot="start" defaultHref="/" text="" icon="arrow-back-outline"></ion-back-button>
+    <ion-title class="ttl-left">
+      {{ threadUser }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div chat-div *ngIf="threadData.length > 0">
+    <ng-container *ngFor="let thread of threadData">
+      <div *ngIf="thread.id != userId" user-message>
+        <p *ngIf="thread.type == 1">{{ thread.message }}</p>
+        <img *ngIf="thread.type == 2" src="{{ thread.message }}">
+      </div>
+      <div *ngIf="thread.id == userId" my-message>
+        <p *ngIf="thread.type == 1">{{ thread.message }}</p>
+        <img *ngIf="thread.type == 2" src="{{ thread.message }}">
+      </div>
+
+
+    </ng-container>
+
+  </div>
+
+
+</ion-content>
+<ion-footer>
+  <div *ngIf="previewImage" class="imgposnew">
+    <img [src]="previewImage" class="fimg" />
+    <div class="sicon" (click)="onSubmit()">
+      <ion-icon name="send"></ion-icon>
+    </div>
+    <ion-icon name="close-circle" (click)="closeImg()"></ion-icon>
+  </div>
+  <ion-list choose-mtd-lst list-one>
+    <form [formGroup]="messageForm" (ngSubmit)="onSubmit()" novalidate>
+      <ion-item detail="false" lines="none">
+        <div div-one>
+          <ion-input type="text" formControlName="message" (ionInput)="change($event)" placeholder="Type message...">
+          </ion-input>
+          <img (click)="selectImageSource()" class="input-icon" src="assets/images/input-icon.svg">
+        </div>
+
+        <ion-button slot="end" class="btnion" (click)="onSubmit()"><img src="assets/images/chat-btn.svg"></ion-button>
+      </ion-item>
+    </form>
+  </ion-list>
+</ion-footer>

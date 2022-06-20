@@ -1,0 +1,188 @@
+<ion-header>
+  <ion-toolbar lines="none">
+    <ion-back-button slot="start" defaultHref="/" text="" icon="arrow-back-outline"></ion-back-button>
+	
+      <ion-title class="ttl-left">
+        Company Information
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <div form-group>
+    <ion-label>First Name</ion-label>
+    <ion-item lines="none">
+      <ion-input type="text" placeholder="Enter First Name"></ion-input>
+    </ion-item>
+  </div>	
+  <div form-group>
+    <ion-label>Last Name</ion-label>
+    <ion-item lines="none">
+      <ion-input type="text" placeholder="Enter Last Name"></ion-input>
+    </ion-item>
+  </div>	
+  <div form-group>
+    <ion-label>Company Name</ion-label>
+    <ion-item lines="none">
+      <ion-input type="text" placeholder="Enter Company Name"></ion-input>
+    </ion-item>
+  </div>	
+  <div form-group>
+    <ion-label>Email Address </ion-label>
+    <ion-item lines="none">
+      <ion-input type="email" placeholder="Enter Email Address"> </ion-input>
+    </ion-item>
+  </div>	
+  <div form-group>
+    <ion-label>Phone</ion-label>
+    <ion-item lines="none">
+      <ion-input type="tel" placeholder="Enter Phone Number" ></ion-input>
+    </ion-item>
+  </div>	
+  <div form-group>
+    <ion-label>Website</ion-label>
+    <ion-item lines="none">
+      <ion-input type="url" placeholder="Enter website" ></ion-input>
+    </ion-item>
+  </div>	
+  <div form-group>
+    <ion-label>Facility Type</ion-label>
+    <ion-item lines="none">
+      <ion-select  [interfaceOptions]="customAlertOptions12" placeholder="Choose Facility Type" interface="alert">
+        <ion-select-option value="cat1"> Hunter/Jumper </ion-select-option>
+            <ion-select-option value="cat2"> Barrel Racing</ion-select-option>
+            <ion-select-option value="cat2"> Breeding Program</ion-select-option>
+            <ion-select-option value="cat2"> Dressage</ion-select-option>
+            <ion-select-option value="cat2"> Endurance</ion-select-option>
+            <ion-select-option value="cat2"> Eventing</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </div>	
+  <div form-group>
+    <ion-label>About Company</ion-label>
+    <ion-item lines="none">
+      <ion-textarea rows="8" placeholder="Type here..."></ion-textarea>
+    </ion-item>
+  </div>	
+
+  <div form-group>
+    <ion-label>Full Address</ion-label>
+    <ion-item lines="none">
+      <ion-input type="text"  placeholder="Enter Location"></ion-input>
+      <img src="assets/images/address.svg">
+  </ion-item>
+  </div> 
+  <div form-group>
+    <ion-label>Company Photos/Videos</ion-label>
+      <div media-file for="media"> 
+     <div file-text>
+      <h2>Upload profile photos here.</h2>
+      <p>You can upload up to 6 images under your profile.</p>
+     </div>
+      
+      <ion-button upload-btn shape="round" expand="full">Upload</ion-button>
+      <ion-input type="file" id="media" placeholder="Enter Location"></ion-input>
+    </div>
+  </div>
+
+
+</ion-content>
+
+<ion-footer>
+ 	
+
+  <ion-row>
+    <ion-col size="12">
+      <ion-button add-btn shape="round" expand="full" id="trigger-button">Add Account Member</ion-button>
+    </ion-col>
+    <ion-col size="6"> 
+      <ion-button save-btn shape="round" expand="full" color="primary">Save Profile</ion-button>
+    </ion-col>
+    <ion-col size="6"> 
+      <ion-button save-btn shape="round" expand="full" color="primary">View Profile</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-footer>
+
+
+<ion-modal class="ionModal" trigger="trigger-button">
+  <ng-template>
+    <ion-content>
+      <ion-item lines="none" icon-header>
+        <ionlabel slot="end">
+          <ion-icon (click)="modalCtrl.dismiss()" name="close-outline"></ion-icon>
+        </ionlabel>
+      </ion-item>
+
+      <ion-label><h1>Add Account Member</h1></ion-label>
+     
+
+      <div form-group>
+        <ion-label>Member First Name</ion-label>
+        <ion-item lines="none">
+          <ion-input type="text" placeholder="Member First Name"></ion-input>
+        </ion-item>
+      </div>
+      <div form-group>
+        <ion-label>Member Last Name</ion-label>
+        <ion-item lines="none">
+          <ion-input type="text" placeholder="Member Last Name"></ion-input>
+        </ion-item>
+      </div>		
+      <div form-group>
+        <ion-label>Member Username</ion-label>
+        <ion-item lines="none">
+          <ion-input type="text" placeholder="Member Username"></ion-input>
+        </ion-item>
+      </div>	
+      <div form-group>
+        <ion-label>Member Email Address</ion-label>
+        <ion-item lines="none">
+          <ion-input type="text" placeholder="Member Email Address"></ion-input>
+        </ion-item>
+      </div>	
+      <div form-group>
+        <ion-label>Password</ion-label>
+        <ion-item lines="none">
+          <ion-input type="password" placeholder="Enter Password"></ion-input>
+        </ion-item>
+      </div>	
+      <div form-group>
+        <ion-label>Confirm Password</ion-label>
+        <ion-item lines="none">
+          <ion-input type="password" placeholder="Enter Confirm Password"></ion-input>
+        </ion-item>
+      </div>	
+      <div form-group check-item>
+
+        <ion-label>Member Permissions</ion-label>
+
+        <ion-list>
+        <ion-item lines="none" >
+          <ion-checkbox></ion-checkbox>
+          <ion-label>Post New Job</ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-checkbox></ion-checkbox>
+          <ion-label>Manage Jobs</ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-checkbox></ion-checkbox>
+          <ion-label>Saved Candidates</ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-checkbox></ion-checkbox>
+          <ion-label>Packages</ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-checkbox></ion-checkbox>
+          <ion-label>Transaction</ion-label>
+        </ion-item>
+      </ion-list>
+
+      </div>
+      <div form-group>
+        <ion-button save-btn shape="round" expand="full" color="primary">Add Member</ion-button>
+      </div>
+    </ion-content>
+  </ng-template>
+</ion-modal>

@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar lines="none">
+    <ion-title class="ttl-left">
+      Notifications
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div choose-payment-method>
+    <ion-list choose-mtd-lst>
+      <ng-container *ngIf="allNotifications.length > 0">
+        <ion-item detail="false" lines="none" *ngFor="let notification of allNotifications">
+          <ion-thumbnail>
+            <img src="{{ notification.image }}">
+          </ion-thumbnail>
+          <ion-label noti-cont>
+            <h1>{{ notification.title }}</h1>
+            <p><img src="assets/images/clock.svg"> {{ notification.time }}</p>
+          </ion-label>
+        </ion-item>
+      </ng-container>
+      <ng-container  *ngIf="is_loaded === true">
+        <ion-item detail="false" lines="none">
+          <ion-label noti-cont>
+            <h1 style="font-size: 16px;color: red;text-align: center;">You have no notifications.</h1>
+          </ion-label>
+        </ion-item>
+      </ng-container>
+
+    </ion-list>
+  </div>
+</ion-content>

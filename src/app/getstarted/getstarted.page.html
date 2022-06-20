@@ -1,0 +1,35 @@
+<ion-content class="ion-padding">
+   <div getstarted>
+      <div logo>
+         <img src="assets/images/logo.png" alt="">
+      </div>
+   </div>
+   <div getstartedbottom>
+   	<h3>What are you looking for?</h3>
+   	
+   	<div radiolist>
+	    <div radioinner>
+		 <input type="radio" id="radio01"  name="radio"  style="display:none" value="I want a job"/>
+		  <label for="radio01">
+		   <div jobprofile>
+		   		<img  src="assets/images/job.svg"/>
+			</div>
+		   <h3>I want a job</h3>
+		  </label>
+		</div>
+	      <div radioinner>
+		 <input type="radio" id="radio02"  checked name="radio"  style="display:none" value="I want an employee"/>
+		  <label for="radio02">
+		  <div jobprofile> 
+		  	<img  src="assets/images/user.svg"/>
+		  </div>
+		   <h3>I want an employee</h3>
+		  </label>
+		</div>
+	  </div>
+
+      <ion-button btn-submit shape="round" expand="full" routerLink="/login">
+         Let’s Get Started <ion-icon name="arrow-forward-outline"></ion-icon>
+      </ion-button>
+   </div>
+</ion-content>

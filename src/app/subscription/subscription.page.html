@@ -1,0 +1,42 @@
+<ion-header mode="ios" [class.show-background]="showToolbar">
+	<ion-toolbar lines="none">
+		<ion-title class="ttl-left">
+			Buy Subscription
+		</ion-title>
+		<ion-buttons slot="end">
+			<ion-icon name="close" (click)="goToDashboard()"></ion-icon>
+		</ion-buttons>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" [scrollEvents]="true" (ionScroll)="onScroll($event)">
+	<div subscriptionSlider>
+		<ion-slides pager="true" [options]="slideOpts" class="opoacit">
+			<ion-slide *ngFor="let data of packages">
+				<div class="layers-main">
+					<div sbtn-crd-tp>
+						<div plan-Type>{{ data?.title}}</div>
+						<div plan-price>
+							<sub>$</sub>{{ data?.pkg_price}}<span>/ 1 Month</span>
+						</div>
+						<h2>Price (CAD+ tax)</h2>
+					</div>
+					<div sbtn-crd-bdy>
+						<ul *ngFor="let feature of data?.features">
+							<li [ngClass]="{'light_li': feature?.status === 'inactive'}">
+								<ion-icon name="checkmark-circle"></ion-icon> {{ feature?.title }}
+							</li>
+						</ul>
+						<a href="javascript:void(0);" class="moreBtn">Learn More</a>
+						<div plan-btn>
+							<ion-button color="primary" shape="round" routerLink="/payment">
+								Choose Plan
+							</ion-button>
+						</div>
+					</div>
+				</div>
+			</ion-slide>
+		</ion-slides>
+
+	</div>
+</ion-content>

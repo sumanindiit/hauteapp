@@ -1,0 +1,113 @@
+<ion-header mode="ios" [class.show-background]="showToolbar">
+  <ion-toolbar lines="none">
+    <ion-back-button slot="start" defaultHref="/" text="" icon="arrow-back-outline"></ion-back-button>
+	
+      <ion-title class="ttl-left">
+           Job Details
+      </ion-title>
+      <ion-label slot="end" routerLink="/edit-job">Edit Job</ion-label>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-no-padding" [scrollEvents]="true" (ionScroll)="onScroll($event)">
+
+  <div job-detail-hdr>
+    <img src="assets/images/job-detail-one.svg">
+    <h1>Bryn Mawr Riding Camp</h1>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <img src="assets/images/calender.svg">
+            <h2>Posted on</h2>
+            <h3>January 18, 2022</h3>
+          </ion-col>
+          <ion-col border-colmn>
+            <img src="assets/images/job-map.svg">
+            <h2>Location</h2>
+            <h3>Toronto, ON, Canada</h3>
+          </ion-col>
+          <ion-col>
+            <img src="assets/images/salary.svg">
+            <h2>Salary</h2>
+            <h3>To Be Determined</h3>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+           <ion-button><img src="assets/images/sort.svg">Sorted</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button><img src="assets/images/emailjob.svg">Email Job</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button><img src="assets/images/viewmap.svg">View Map</ion-button>
+          </ion-col>
+        </ion-row>
+
+        </ion-grid>
+</div>
+
+<div job-detail-data>
+  <h1>Job Detail</h1>
+
+  <ion-row>
+    <ion-col size="6" class="ion-no-padding">
+     <div job-detail-box>
+       <img src="assets/images/detail1.svg">
+       <h2>Perks</h2>
+       <p>Board Included
+        Housing Included</p>
+     </div>
+    </ion-col>
+    <ion-col size="6" class="ion-no-padding">
+      <div job-detail-box mrgin-set>
+        <img src="assets/images/detail2.svg">
+        <h2>Minimum Experience</h2>
+        <p>2 - 3 Years</p>
+      </div>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="6" class="ion-no-padding">
+     <div job-detail-box>
+       <img src="assets/images/detail3.svg">
+       <h2>Working Student Position </h2>
+       <p>Yes</p>
+     </div>
+    </ion-col>
+    <ion-col size="6" class="ion-no-padding">
+      <div job-detail-box mrgin-set>
+        <img src="assets/images/detail4.svg">
+        <h2>Travel Requirements</h2>
+        <p>Travel within show circuit area</p>
+      </div>
+    </ion-col>
+  </ion-row>
+
+
+  <h1>Job Description</h1>
+  <p>Bryn Mawr Riding Camp is looking for qualified staff for the summer of 2022! Please visit our website, www.brynmawrridingcamp.com for applications and additional information. About The Facility: Bryn Mawr Riding Camp accommodates 40 horses from both The University of Findlay and Centenary University each summer on its beautiful 50 acre farm. The facilities include 40 stalls, an indoor riding arena, 5 outdoor arenas, acres of trails, and a cross country course. Job Description: Responsibilities include all aspects of barn care for our 40 horses, teaching hunt seat riding lessons from beginner to advanced (depending upon level), schooling horses regularly, planning camper activities, & acting as a counselor for our equestrian campers. Can also be used as a paid college internship if needed. No previous teaching experience is required, though english riding experience is necessary!
+    </p>
+
+    <h1>Facility Type</h1>
+    <ion-label>
+      <ion-badge>Barrel Racing</ion-badge>
+      <ion-badge>Breeding Program</ion-badge>
+      <ion-badge>Dressage</ion-badge>
+      <ion-badge>Endurance</ion-badge>
+    </ion-label>
+
+
+  <h1>Share</h1>
+
+    <ion-item lines="none" class="ion-no-padding">
+      <a routerlink="#"><img src="assets/images/fb.svg"></a>
+      <a routerlink="#"><img src="assets/images/insta.svg"></a>
+      <a routerlink="#"><img src="assets/images/whatsapp.svg"></a>
+      <a routerlink="#"><img src="assets/images/share.svg"></a>
+    </ion-item>
+
+</div>
+
+</ion-content>

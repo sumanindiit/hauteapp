@@ -1,0 +1,52 @@
+<ion-header mode="ios" [class.show-background]="showToolbar">
+  <ion-toolbar lines="none">
+    <ion-back-button slot="start" defaultHref="/" text="" icon="arrow-back-outline"></ion-back-button>
+    <ion-title class="ttl-left">
+      Packages
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" [scrollEvents]="true" (ionScroll)="onScroll($event)">
+  <div subscriptionSlider>
+    <ion-slides pager="true" [options]="slideOpts">
+      <ion-slide *ngFor="let data of subscriptionData">
+        <div class="layers-main">
+          <div sbtn-crd-tp>
+            <ng-container *ngIf="data?.type == 'free'">
+              <div plan-Type>Bronze</div>
+              <div plan-price>
+                Free
+              </div>
+            </ng-container>
+            <ng-container *ngIf="data?.type == 'paid'">
+              <div plan-Type>{{ data?.title }}</div>
+              <div plan-price>
+                <sub>$</sub><span big-text>{{ data?.pkg_price}}</span>.99<span>/ 1 Month</span>
+              </div>
+              <h2>Price (CAD+ tax)</h2>
+            </ng-container>
+
+
+          </div>
+          <div sbtn-crd-bdy>
+            <ul *ngFor="let feature of data?.features">
+              <li [ngClass]="{'light_li': feature?.status === 'inactive'}">
+                <ion-icon name="checkmark-circle"></ion-icon> {{ feature?.title }}
+              </li>
+            </ul>
+            <div plan-btn>
+              <ion-button color="primary" shape="round" routerLink="/payment">
+                Choose Plan
+              </ion-button>
+            </div>
+          </div>
+
+        </div>
+
+      </ion-slide>
+    </ion-slides>
+
+
+  </div>
+</ion-content>

@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar lines="none">
+    <ion-back-button slot="start" defaultHref="/tabs-em/tabs-em/em-profile" text="" icon="arrow-back-outline">
+    </ion-back-button>
+    <ion-title class="ttl-left">
+      Resume
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div media-file for="media" *ngIf="!resumeUploaded">
+    <div file-text (click)="select()">
+      <img src="assets/images/upload-resume.svg">
+      <h2>Tap to upload your resume</h2>
+    </div>
+
+  </div>
+
+  <div uploaded-resume *ngIf="resumeUploaded">
+    <p>Uploaded Resume</p>
+    <div resume-image *ngFor="let val of resumeData">
+      <img src="assets/images/{{ val.icon }}_file.png">
+
+      <div resume-overlay>
+        <p (click)="viewResume(val?.org_file_url,val?.extension)">Tap to view</p>
+      </div>
+      <div downld-edit-resume>
+        <ion-icon (click)="downloadResume(val.org_file_url,val.file_name)" name="download-outline"></ion-icon>
+        <ion-icon (click)="deleteResume(val.file_uniqid)" name="trash-outline"></ion-icon>
+      </div>
+    </div>
+
+  </div>
+  <p *ngIf="resumeUploaded">{{ resumeMessage }}</p>
+</ion-content>

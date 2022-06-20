@@ -1,0 +1,103 @@
+ion-header {
+	position: relative;
+    width: 100%;
+    padding: 0 15px;
+    background: #fafcff;
+	&:after {
+		display: none;
+	}
+	ion-toolbar {
+		--border-width: 0px;
+	    --min-height: 65px;
+	    --background: transparent;
+	    ion-title{
+	    	    font-size: 18px;
+			    font-family: var(--ion-poppins-font);
+			    font-weight: 600;
+			    color: var(--ion-color-dark);
+	    }
+	    ion-back-button{
+	    	  color: var(--ion-color-dark);
+	    	   font-size: 12px;
+	    }
+	}
+}
+
+ion-content {
+    --background: #FAFCFF;
+	background: #FAFCFF;
+	[addpaymentcard] 
+		{
+			background: transparent;
+		    padding: 10px 20px;
+		    position: relative;
+		    z-index: 1;
+		    margin-top: 0;
+		    	 [form-group]
+				   {
+				    margin-bottom:15px;
+				    font-family: var(--ion-poppins-font);
+				    ion-label
+				   	 	{
+						    font-size: 14px;
+						    font-weight: 600;
+						    color: #43444F;
+						}
+					ion-item
+					{ 
+							    --padding-top: 0;
+							    --padding-start: 15px;
+							    background: var(--ion-color-secondary);
+							    --background: var(--ion-color-secondary);
+							    border-radius: 8px;
+							    --min-height: 55px;
+							    margin-top: 10px;
+							    --padding-bottom: 0;
+				      ion-input
+								{
+								font-size: 14px;
+								--placeholder-font-weight:500;
+							    font-weight: 600;
+							    --placeholder-color: var(--ion-color-primary);
+							    --placeholder-opacity: 1;
+							    color: var(--ion-color-primary);
+							    --padding-top: 0;
+							    --padding-bottom: 0;
+							    font-family: var(--ion-poppins-font);
+								}
+					}
+				   }
+				   [check-form-group] {
+					   	  ion-item {
+								    background: transparent;
+								    --background: transparent;
+								    --padding-start: 0;
+								    	ion-label {
+										       font-size: 14px;
+											    font-weight: 500;
+											    color: #43444F;
+											    font-family: var(--ion-poppins-font);
+												margin-left: 8px;
+										}
+								}
+					   }
+	}
+}
+
+ion-footer {
+	padding: 20px;
+    background: #fafcff;
+    --background: #fafcff;
+		ion-button {
+		    --box-shadow: none;
+		    min-height: 55px;
+		    color: var(--ion-color-white);
+		    --border-radius: 5px;
+		    font-size: 16px;
+		    font-weight: 400;
+		    text-transform: capitalize;
+		    margin: 0px;
+		    font-family: var(--ion-poppins-font);
+		    letter-spacing: 0;
+		}
+}

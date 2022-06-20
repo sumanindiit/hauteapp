@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar lines="none">
+    <ion-back-button slot="start" defaultHref="/tabs-em/tabs-em/em-profile" text="" icon="arrow-back-outline"></ion-back-button>
+    <ion-title class="ttl-left"> Account </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div choose-payment-method>
+    <ion-list choose-mtd-lst>
+      <h1>Security</h1>
+      <ion-item detail="false" lines="none" routerLink="/changepassword">
+        <ion-title class="ion-text-left">Password</ion-title>
+        <ion-label slot="end"><img src="assets/images/account-arrow.svg" /></ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-list choose-mtd-lst>
+      <h1>Notifications</h1>
+      <ion-item detail="false" lines="none" routerLink="/em-pushnotifications">
+        <ion-title class="ion-text-left">Push Notifications</ion-title>
+        <ion-label slot="end"><img src="assets/images/account-arrow.svg" /></ion-label>
+      </ion-item>
+      <ion-item detail="false" lines="none" routerLink="#">
+        <ion-title (click)="shareApp();" class="ion-text-left">Share Haute</ion-title>
+        <ion-label (click)="shareApp();" slot="end"><img src="assets/images/account-arrow.svg" /></ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-list choose-mtd-lst>
+      <h1>Contact Us</h1>
+      <ion-item detail="false" lines="none" routerLink="/help">
+        <ion-title class="ion-text-left">Help & Support</ion-title>
+        <ion-label slot="end"><img src="assets/images/account-arrow.svg" /></ion-label>
+      </ion-item>
+      <ion-item detail="false" lines="none" routerLink="#">
+        <ion-title class="ion-text-left">Email us</ion-title>
+        <ion-label slot="end"><img src="assets/images/account-arrow.svg" /></ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-list choose-mtd-lst>
+      <h1>Legal</h1>
+      <ion-item detail="false" lines="none" routerLink="#">
+        <ion-title class="ion-text-left">Privacy Policy</ion-title>
+        <ion-label slot="end"><img src="assets/images/account-arrow.svg" /></ion-label>
+      </ion-item>
+      <ion-item detail="false" lines="none" routerLink="#">
+        <ion-title class="ion-text-left">Terms of Service</ion-title>
+        <ion-label slot="end"><img src="assets/images/account-arrow.svg" /></ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div footer-btns>
+    <ion-button logout-btn shape="round" expand="full" color="primary"  (click)="logout()" >Logout</ion-button>
+    <ion-button delete-btn shape="round" expand="full">Delete my Account</ion-button>
+    <img class="footer-imgg" src="assets/images/account-ft.png" />
+  </div>
+</ion-content>
